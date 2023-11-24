@@ -1,20 +1,20 @@
 <script>
-import LoginGetSarted from '@/components/get-started/LoginGetSarted.vue'
+import NavGetSarted from '@/components/get-started/NavGetSarted.vue'
 import ShortCredit from '@/components/ShortCredit.vue'
 import TitleSpecial from '@/components/TitleSpecial.vue'
 import SubTitle from '@/components/SubTitle.vue'
-import ButtonPrimary from '@/components/ButtonPrimary.vue'
-import ContentainerComp from '@/components/ContentainerComp.vue'
+import ButtonGetStarted from '@/components/ButtonGetStarted.vue'
+import ContainerMain from '@/components/ContainerMain.vue'
 
 export default {
     name: 'GetStarted',
     components: {
-        LoginGetSarted,
+        NavGetSarted,
         ShortCredit,
         TitleSpecial,
         SubTitle,
-        ButtonPrimary,
-        ContentainerComp,
+        ButtonGetStarted,
+        ContainerMain,
     },  
     data() {
         return {
@@ -27,18 +27,22 @@ export default {
 
 <template>
     <div class="w-screen h-screen bg-black text-white">
-        <header>
-            <LoginGetSarted />
-        </header>
-        <main>
-            <ContentainerComp>
-                <TitleSpecial />
-                <SubTitle  />
-                <ButtonPrimary />
-            </ContentainerComp> 
-        </main> 
-        <footer>
-            <ShortCredit />
-        </footer> 
+        <div class="container-content pt-4">
+            <NavGetSarted />
+            <ContainerMain>
+                <TitleSpecial :text="title" />
+                <SubTitle :text="subTitle" />
+                <ButtonGetStarted text="Get Started" />
+            </ContainerMain> 
+            <footer>
+                <ShortCredit />
+                <RouterLink to="/dashboard">
+                    Login
+                    </RouterLink>
+
+            </footer>
+        </div>
     </div>
 </template>
+
+<!-- https://slice.wbrain.me/#/board/oZixacSQez8hjJTmkT -->

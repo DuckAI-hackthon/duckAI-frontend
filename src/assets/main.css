@@ -7,6 +7,12 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;900&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
 .flex-center {
     @apply flex justify-center items-center;
 }
@@ -17,4 +23,22 @@
 
 .flex-col-center {
     @apply flex flex-col justify-center items-center;
+}
+
+.container-content {
+    @apply mx-auto;
+    width: 90%;
+}
+
+.titleMaster {
+    font-family: Poppins;
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.6px;
+    background: linear-gradient(90deg, #6135FE 0%, #BEB2EB 38.02%, #6843EC 75.83%, #311C7D 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

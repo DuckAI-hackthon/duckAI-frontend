@@ -1,7 +1,9 @@
-<template>
-    <div>
-        menu login
-    </div>
+<template lang="">
+    <li>
+        <slot>
+
+        </slot>
+    </li>
 </template>
 <script>
 export default {

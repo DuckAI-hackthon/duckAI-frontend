@@ -1,11 +1,16 @@
 <template lang="">
     <div>
-        sub title
+        {{ text }}
     </div>
 </template>
 <script>
 export default {
-    
+    props: {
+        text: {
+            type: String,
+            default: 'SubTitle'
+        }
+    }
 }
 </script>
 <style lang="">
