@@ -1,3 +1,3 @@
 <template>
-            <h1 class="text-purple text-2xl">Cadastro</h1>
+            <h1 class="text-purple text-2xl pb-5">Login</h1>
 </template>

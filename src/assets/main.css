@@ -22,7 +22,7 @@
 }
 .glass-background {
     @apply w-screen h-screen absolute;
-    backdrop-filter: blur(90px);
+    backdrop-filter: blur(200px);
 }
 
 .input-login {
@@ -70,5 +70,4 @@ body {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}
 }
