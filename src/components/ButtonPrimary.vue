@@ -1,6 +1,8 @@
 <template lang="">
-    <div class="btn-primary">
-        {{ text }}
+    <div class="btn-primary hover:bg-indigo-700">
+        <router-link :to="link">
+            {{ text }}
+        </router-link>
     </div>
 </template>
 <script>
@@ -9,6 +11,10 @@ export default {
         text: {
             type: String,
             default: 'ButtonPrimary'
+        },
+        link: {
+            type: String,
+            default: '/'
         }
     },
     methods: {

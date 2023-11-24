@@ -27,7 +27,12 @@ body {
 
 .container-content {
     @apply mx-auto;
-    width: 90%;
+    width: 80%;
+}
+
+.img-pato {
+    height: 70vh;
+    width: auto;
 }
 
 .titleMaster {

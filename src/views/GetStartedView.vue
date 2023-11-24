@@ -26,23 +26,28 @@ export default {
 </script>
 
 <template>
-    <div class="w-screen h-screen bg-black text-white">
-        <div class="container-content pt-4">
+    <div class="w-screen h-screen bg-black text-white box-border">
+        <div class="container-content h-full pt-4 flex-col flex justify-between box-border ">
             <NavGetSarted />
-            <ContainerMain>
-                <TitleSpecial :text="title" />
-                <SubTitle :text="subTitle" />
-                <ButtonGetStarted text="Get Started" />
+            <ContainerMain class="flex justify-between items-center overflow-visible">
+                <div  class="gap-4 w-full flex flex-col">
+                    <TitleSpecial :text="title" />
+                    <SubTitle :text="subTitle" />
+                    <ButtonGetStarted text="Get Started" />
+                </div>
+                <div>
+                    <img :src="`./images/pato4.png`" alt="">
+                </div>
             </ContainerMain> 
             <footer>
                 <ShortCredit />
-                <RouterLink to="/dashboard">
-                    Login
-                    </RouterLink>
-
             </footer>
         </div>
     </div>
 </template>
+
+<style>
+
+</style>
 
 <!-- https://slice.wbrain.me/#/board/oZixacSQez8hjJTmkT -->

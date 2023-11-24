@@ -1,5 +1,5 @@
 <template lang="">
-    <div>
+    <div class="w-4/6">
         {{ text }}
     </div>
 </template>
