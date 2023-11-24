@@ -38,7 +38,7 @@ export default {
             <p class="text-xs">Use 8 caracteres ou mais.</p>
         </label>
 
-        <p class="text-xs w-[22vw] mt-3">Concordo com nossos Termos de uso e Política de privacidade</p>
+        <p class="text-xs w-[22vw] mt-3">Ao continuar você concorda com nossos Termos de uso e Política de privacidade</p>
         <label class="flex-login gap-4">
             <ButtonLoginRegister text="Cadastrar" link="/"/>
             <p class="text-sm">Já possuí conta? Faça Login </p>
