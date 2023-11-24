@@ -24,7 +24,11 @@
 
                 <p class="text-xs mt-3">Concordo com nossos Termos de uso e Política de privacidade</p>
                 <label class="flex-login gap-4">
-                    <button class="login-btn ">Cadastrar</button>
+                    <button class="login-btn ">
+                        <router-link to="/dashboard">
+                            Cadastrar
+                        </router-link>
+                    </button>
                     <p class="text-sm">Já possuí conta? Faça Login </p>
                 </label>
             </form>
