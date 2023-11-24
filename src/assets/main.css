@@ -29,6 +29,7 @@
     @apply rounded-lg border border-black text-sm text-gray;
     width: 22vw;
     padding: 1vh 1vw;
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;900&display=swap');
 
