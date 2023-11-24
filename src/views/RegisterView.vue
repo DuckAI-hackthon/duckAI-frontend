@@ -1,6 +1,6 @@
 <script >
-import ContainerFormComponent from '../components/login/ContainerFormComponent.vue'
-import CirclesComponent from '../components/login/CirclesComponent.vue'
+import ContainerFormComponent from '../components/register/ContainerFormComponent.vue'
+import CirclesComponent from '../components/register/CirclesComponent.vue'
 
 export default {
     components: {
@@ -18,3 +18,5 @@ export default {
         <ContainerFormComponent />
     </section>
 </template>
+
+<style scoped></style>
