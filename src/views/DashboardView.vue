@@ -1,12 +1,14 @@
 <script>
 import TopNav from '@/components/navbar-dashboard/TopNav.vue'
 import SideNav from '@/components/navbar-dashboard/SideNav.vue'
+import TraductionToolComponent from '@/components/tools/TraductionToolComponent.vue'
 
 export default {
     name: 'DashBoard',
     components: {
         TopNav,
-        SideNav
+        SideNav,
+        TraductionToolComponent
     },
 }
 </script>
@@ -17,10 +19,8 @@ export default {
             <TopNav />
             <SideNav />
         </header>
-        <main class="mt-32 w-8/12 bg-red-500 m-auto">
-            <div class="w-full min-h-screen bg-blue-500">
-                DashBoard
-            </div>
+        <main class="mt-32 w-8/12  m-auto">
+            <TraductionToolComponent/>
         </main>
         <footer>
         </footer>
