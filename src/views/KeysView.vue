@@ -21,7 +21,6 @@ const catchKeyWords = async (text) => {
             },
         )
         keyWords.value = data
-        console.log(data)
     } catch(error){
         console.error(error)
     }

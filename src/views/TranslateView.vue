@@ -12,6 +12,7 @@ import axios from 'axios';
 
 const textTo = ref('');
 const textFrom = ref('');
+const textTranslated = ref('');
 
 const getTranslation = async (text) => {
     try{
@@ -23,8 +24,7 @@ const getTranslation = async (text) => {
                 to: "Portuguese"
             },
         );
-        console.log(data);
-        textFrom.value = data;
+        textTranslated.value = data;
     } catch(error){
         console.error(error);
     }

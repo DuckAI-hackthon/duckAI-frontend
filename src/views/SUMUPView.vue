@@ -10,6 +10,7 @@ import { ref } from 'vue';
 import axios from 'axios';
 
 const textToSUMUP = ref('');
+const textSummedUp = ref('');
 
 const getSummary = async (text) => {
     try{
@@ -19,7 +20,7 @@ const getSummary = async (text) => {
                 prompt: text,
             },
         )
-        console.log(data)
+        textSummedUp.value = data
     } catch(error){
         console.error(error)
     }
