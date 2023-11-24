@@ -10,24 +10,24 @@
 import { ref } from 'vue';
 import axios from 'axios';
 
-const textTo = ref('')
-const textFrom = ref('')
+const textTo = ref('');
+const textFrom = ref('');
 
-const getTranslation = async (textTo) => {
+const getTranslation = async (text) => {
     try{
         const data = await axios.post(
-            "http://localhost:3000/duck/qea",
+            "http://localhost:3000/duck/translate",
             {
-                prompt: textTo,
+                prompt: text,
                 from: "English",
                 to: "Portuguese"
             },
-        )
-        console.log(data)
-        textFrom.value = data
+        );
+        console.log(data);
+        textFrom.value = data;
     } catch(error){
-        console.error(error)
+        console.error(error);
     }
-}
+};
 
 </script>

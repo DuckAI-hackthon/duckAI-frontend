@@ -17,6 +17,11 @@ const router = createRouter({
       path: '/translate',
       name: "translate",
       component: () => import('../views/TranslateView.vue')
+    },
+    {
+      path: '/SUMUP',
+      name: "SUMUP",
+      component: () => import('../views/SUMUPView.vue')
     }
   ]
 })
