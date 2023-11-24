@@ -1,17 +1,17 @@
 import axios from "axios";
 
 export default class getTranslationApi{
-    async getTranslation(text) {
+    async getTranslation(text, from, to) {
         try{
-            const data = await axios.post(
+            const result = await axios.post(
                 "http://localhost:3000/duck/translate",
                 {
                     prompt: text,
-                    from: "English",
-                    to: "Portuguese"
+                    from: from,
+                    to: to
                 },
             );
-            return data;
+            return result.data;
         } catch(error){
             console.error(error);
             return error;

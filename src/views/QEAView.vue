@@ -8,12 +8,12 @@
 <script setup>
 import { ref } from 'vue';
 import { QEAFetchStore } from "@/stores/qea"
-const qeaFetchStore = QEAFetchStore()
+const newQEAFetchStore = QEAFetchStore()
  
 const textQuestion = ref('');
 
 async function getAnswer() {
-    await qeaFetchStore.getAnswer(textQuestion.value);
+    await newQEAFetchStore.getAnswer(textQuestion.value);
 }
 
 </script>
