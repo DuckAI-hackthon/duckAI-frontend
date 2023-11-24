@@ -22,6 +22,11 @@ const router = createRouter({
       path: '/SUMUP',
       name: "SUMUP",
       component: () => import('../views/SUMUPView.vue')
+    },
+    {
+      path: '/keyWords',
+      name: "keyWords",
+      component: () => import('../views/KeysView.vue')
     }
   ]
 })
