@@ -12,13 +12,15 @@ export default {
 </script>
 
 <template>
-    <div class="w-screen h-screen bg-black text-white">
+    <div class="w-full flex justify-center items-center bg-black text-white">
         <header>
             <TopNav />
             <SideNav />
         </header>
-        <main>
-            DashBoard
+        <main class="mt-32 w-8/12 bg-red-500 m-auto">
+            <div class="w-full min-h-screen bg-blue-500">
+                DashBoard
+            </div>
         </main>
         <footer>
         </footer>

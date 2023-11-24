@@ -2,7 +2,7 @@
 
 <template>
   <div
-    class="absolute right-4 top-4 p-2 flex flex-row align-middle justify-center"
+    class="fixed right-4 top-4 p-2 flex flex-row align-middle justify-center"
   >
     <button class="mx-3">
       <svg
