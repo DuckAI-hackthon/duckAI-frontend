@@ -1,32 +1,21 @@
 <script >
+import ContainerFormComponent from '../components/login/ContainerFormComponent.vue'
+import CirclesComponent from '../components/login/CirclesComponent.vue'
+
+export default {
+    components: {
+        ContainerFormComponent,
+        CirclesComponent
+    }
+};
+
 </script>
 
 <template>
-    <section class=" justify-center items-center flex w-screen h-screen bg-black ">
-        <div class="border-40 justify-center items-center flex-col bg-white w-1/4 rounded">
-            <h1 class="text-purple">Login</h1>
-
-            <div class="bg-trasparent">
-                <p></p>
-                <input class="rounded border border-2 border-black" type="text">
-            </div>
-
-            <div class="bg-trasparent">
-                <p></p>
-                <input class="rounded border border-2 border-black" type="email">
-            </div>
-
-            <div class="bg-trasparent">
-                <p></p>
-                <input class="rounded border border-2 border-black" type="password">
-            </div>
-
-            <div class="bg-trasparent">
-                <p></p>
-                <input class="rounded border border-2 border-black" type="password">
-            </div>
-        </div>
-
+    <section class=" flex-center background">
+        <CirclesComponent/>
+        <div class="glass-background overflow-hidden"></div>
+        <ContainerFormComponent />
     </section>
 </template>
 
