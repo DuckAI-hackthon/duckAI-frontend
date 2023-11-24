@@ -6,6 +6,11 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
+      component: () => import('../views/GetStartedView.vue')
+    },
+    {
+      path: '/login',
+      name: 'login',
       component: () => import('../views/LoginView.vue')
     },
     {
@@ -27,6 +32,11 @@ const router = createRouter({
       path: '/keyWords',
       name: "keyWords",
       component: () => import('../views/KeysView.vue')
+    },
+    {
+      path: '/dashboard',
+      name: 'dashboard',
+      component: () => import('../views/DashboardView.vue')
     }
   ]
 })
