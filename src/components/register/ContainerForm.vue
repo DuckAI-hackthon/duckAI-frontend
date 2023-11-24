@@ -41,7 +41,7 @@ export default {
         <p class="text-xs w-[22vw] mt-3">Ao continuar você concorda com nossos Termos de uso e Política de privacidade</p>
         <label class="flex-login gap-4">
             <ButtonLoginRegister text="Cadastrar" link="/"/>
-            <p class="text-sm">Já possuí conta? Faça Login </p>
+            <p class="text-sm">Já possuí conta? Faça <router-link to="/login">login!</router-link></p>
         </label>    
     </form>
 </template>

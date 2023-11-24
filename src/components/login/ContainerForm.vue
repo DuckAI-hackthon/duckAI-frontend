@@ -25,7 +25,7 @@ export default {
         </label>
         <label class="flex-login gap-4 pt-4">
             <ButtonLoginRegister text="Logar" link="/"/>
-            <p class="text-sm">Já possuí conta? Faça Login </p>
+            <p class="text-sm">Ainda não possuí uma conta? <router-link to="/register">Registre-se!</router-link></p>
         </label>
     </form>
 
