@@ -1,12 +1,12 @@
 <script>
-import NavTopo from '@/components/navbar-dashboard/NavTopo.vue'
-import NavLateral from '@/components/navbar-dashboard/NavLateral.vue'
+import TopNav from '@/components/navbar-dashboard/TopNav.vue'
+import SideNav from '@/components/navbar-dashboard/SideNav.vue'
 
 export default {
     name: 'DashBoard',
     components: {
-        NavTopo,
-        NavLateral
+        TopNav,
+        SideNav
     },
 }
 </script>
@@ -14,8 +14,8 @@ export default {
 <template>
     <div class="w-screen h-screen bg-black text-white">
         <header>
-            <NavTopo />
-            <NavLateral />
+            <TopNav />
+            <SideNav />
         </header>
         <main>
             DashBoard
