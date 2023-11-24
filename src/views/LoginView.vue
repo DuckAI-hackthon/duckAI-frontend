@@ -17,6 +17,10 @@ export default {
         <div class="glass-background overflow-hidden"></div>
         <ContainerFormComponent />
     </section>
+    <h1>Login</h1>
+    <RouterLink to="/dashboard">Dashboard</RouterLink>
+    <RouterLink to="/home">home</RouterLink>
+    <router-link to="/login">Login</router-link>
 </template>
 
 <style scoped></style>
