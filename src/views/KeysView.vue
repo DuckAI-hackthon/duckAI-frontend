@@ -7,22 +7,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import axios from 'axios';
 
 const textToCatch = ref('');
-const keyWords = ref('')
 
-const catchKeyWords = async (text) => {
-    try{
-        const data = await axios.post(
-            "http://localhost:3000/duck/keys",
-            {
-                prompt: text,
-            },
-        )
-        keyWords.value = data
-    } catch(error){
-        console.error(error)
-    }
-};
 </script>

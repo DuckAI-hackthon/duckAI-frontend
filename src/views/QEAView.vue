@@ -7,21 +7,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import axios from 'axios';
-const textQuestion = ref('');
-const textAnswer = ref('');
 
-const getAnswer = async (text) => {
-    try{
-        const data = await axios.post(
-            "http://localhost:3000/duck/qea",
-            {
-                prompt: text,
-            },
-        )
-        textAnswer.value = data
-    } catch(error){
-        console.error(error)
-    }
-};
+const textQuestion = ref('');
+
 </script>
