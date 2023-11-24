@@ -15,7 +15,6 @@ export default {
             <p class="text-sm">E-mail</p>
             <input class="input-login my-1" type="email">
         </label>
-
         <label>
             <div class="flex flex-row just items-center justify-between	">
                 <p class="text-sm">Senha</p>
@@ -29,4 +28,5 @@ export default {
             <p class="text-sm">Já possuí conta? Faça Login </p>
         </label>
     </form>
+
 </template>
