@@ -1,6 +1,6 @@
 # duckai-frontend
 
-## Project setup
+## Project setup.
 ```
 yarn install
 ```
