@@ -12,6 +12,11 @@ const router = createRouter({
       path: '/qea',
       name: "qea",
       component: () => import('../views/QEAView.vue')
+    },
+    {
+      path: '/translate',
+      name: "translate",
+      component: () => import('../views/TranslateView.vue')
     }
   ]
 })
