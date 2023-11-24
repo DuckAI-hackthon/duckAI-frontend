@@ -10,4 +10,5 @@ import { ref } from 'vue';
 
 const textToCatch = ref('');
 
+
 </script>
