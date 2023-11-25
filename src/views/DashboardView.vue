@@ -1,13 +1,20 @@
 <script>
 import TopNav from '@/components/navbar-dashboard/TopNav.vue'
 import SideNav from '@/components/navbar-dashboard/SideNav.vue'
+import ShowTools from '@/components/ShowTools.vue'
 
 export default {
     name: 'DashBoard',
     components: {
         TopNav,
-        SideNav
+        SideNav,
+        ShowTools,
     },
+    data(){
+        return {
+            mainContent: 'InfoTools',
+        }
+    }
 }
 </script>
 
@@ -17,10 +24,12 @@ export default {
             <TopNav />
             <SideNav />
         </header>
-        <main class="mt-32 w-8/12 bg-red-500 m-auto">
-            <div class="w-full min-h-screen bg-blue-500">
-                DashBoard
-            </div>
+        <main class="pt-32 w-8/12 m-auto h-screen">
+            <showTools v-if="mainContent === 'InfoTools'" />
+            <TradutionToolComponent v-else-if="mainContent === 'TradutionToolComponent'" />
+            <GenerationTextToolComponent v-else-if="mainContent === 'GenerationTextToolComponent'" />
+            <GenerationKeyWordToolComponent v-else-if="mainContent === 'GenerationKeyWordToolComponent'" />
+            <QuestionAndAnswerToolComponent v-else-if="mainContent === 'QuestionAndAnswerToolComponent'" />
         </main>
         <footer>
         </footer>
