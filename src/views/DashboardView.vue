@@ -5,6 +5,7 @@ import ShowTools from '@/components/ShowTools.vue'
 import TraductionToolComponent from '@/components/tools/TraductionToolComponent.vue'
 import GenerationKeyWordToolComponent from '@/components/tools/GenerationKeyWordToolComponent.vue'
 import GenerationTextToolComponent from '@/components/tools/GenerationTextToolComponent.vue'
+import QuestionAndAnswerToolComponent from '@/components/tools/QuestionAndAnswerToolComponent.vue'
 
 export default {
     name: 'DashBoard',
@@ -14,7 +15,8 @@ export default {
         ShowTools,
         TraductionToolComponent,
         GenerationKeyWordToolComponent,
-        GenerationTextToolComponent
+        GenerationTextToolComponent,
+        QuestionAndAnswerToolComponent
     },
     data(){
         return {
