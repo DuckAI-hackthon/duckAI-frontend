@@ -4,7 +4,7 @@
         <div v-else>Carregando...</div>
         <div class="w-7/12 flex gap-4 items-center justify-start relative">
             <small class="absolute -top-7 text-zinc-600">Selecione o tamanho do texto: </small>
-            <article v-for="item in ['Pequeno', 'Medio', 'Grande']" :key="item" class="gradient-border text-white hover:text-primary cursor-pointer transition-all">
+            <article v-for="item in ['Pequeno', 'Médio', 'Grande']" :key="item" class="gradient-border text-white hover:text-primary cursor-pointer transition-all">
                 {{item}}
             </article>
         </div>
