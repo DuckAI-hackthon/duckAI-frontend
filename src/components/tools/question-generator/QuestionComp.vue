@@ -1,6 +1,6 @@
 <template>
     <div class="flex items-center flex-row gap-4 ">
-        <div class="gradient-border h-[6.5vh]">
+        <div class="gradient-border">
             <img src="@/assets/images/user.png" alt="" class=" w-[3vh] h-[3vh]" />
         </div>
         <p class="w-[35vw]">
@@ -14,3 +14,10 @@ const props = defineProps({
     message: String
 })
 </script>
+
+<style scoped>
+    img {
+        width: 20px;
+        height: 20px;
+    }
+</style>
