@@ -6,7 +6,7 @@
                     alt=""
                     class="w-6 h-6"
                 />
-                <p>Nome</p>
+                <p>{{ userData.username }}</p>
                 <svg class="w-3 h-3"
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -35,14 +35,15 @@
         </div>
     </div>
 </template>
-<script>
-export default {
-    data() {
-        return {
-            openDropdown: false
-        }
-    }
-}
+<script setup>
+import { useUserStore } from '../../stores/user'
+import { ref, computed } from 'vue';
+
+const userStore = useUserStore()
+
+const userData = computed(() => userStore.userData)
+
+const openDropdown = ref(false)
 </script>
 <style scoped>
     .openDropdown {

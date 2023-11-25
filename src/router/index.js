@@ -14,26 +14,6 @@ const router = createRouter({
       component: () => import('../views/LoginView.vue')
     },
     {
-      path: '/qea',
-      name: "qea",
-      component: () => import('../views/QEAView.vue')
-    },
-    {
-      path: '/translate',
-      name: "translate",
-      component: () => import('../views/TranslateView.vue')
-    },
-    {
-      path: '/SUMUP',
-      name: "SUMUP",
-      component: () => import('../views/SUMUPView.vue')
-    },
-    {
-      path: '/keyWords',
-      name: "keyWords",
-      component: () => import('../views/KeysView.vue')
-    },
-    {
       path: '/register',
       name: 'register',
       component: () => import('../views/RegisterView.vue')

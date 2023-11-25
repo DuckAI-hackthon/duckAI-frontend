@@ -10,12 +10,18 @@
       <button @click="newQuestion()" class="flex-center rounded-lg w-[4.5vh] h-[4.5vh] bg-primary">
         <img src="@/assets/images/pointer.png" alt="" class="w-[2vh] h-[2vh]" />
       </button>
+
+      
     </div>
   </div>
 </template>
 
 <script setup>
-import getAnswerApi from '@/services/questionApi.js'
+import { useOtherStore } from "@/stores/others";
+import { useUserStore } from "@/stores/user";
+
+const otherStore = useOtherStore();
+const userStore = useUserStore();
 
 import QuestionComp from "./QuestionComp.vue";
 import AnswerComp from "./AnswerComp.vue";
@@ -25,11 +31,9 @@ const message = ref("a");
 const question = ref("b");
 const answer = ref("c");
 
-function newQuestion() {
-    const usuario = new getAnswerApi()
-    const teste = usuario.getAnswer(message.value)
-    console.log(teste)
-    console.log(usuario)
+async function newQuestion() {
+  console.log(message.value, question.value, answer.value)
+  await otherStore.postTranslate(message.value, 'pt', 'en', userStore.userData.id, 1);
 }
 
 </script>
