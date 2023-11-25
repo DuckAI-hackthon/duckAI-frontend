@@ -1,19 +1,19 @@
 <script>
-import ToolTitleComponent from "@/components/tools/ToolTitleComponent.vue";
+import ToolTitle from "../ToolTitle.vue";
 
 export default {
   name: "DashBoard",
   components: {
-    ToolTitleComponent,
+    ToolTitle,
   },
 };
 </script>
 <template>
   <article>
-    <ToolTitleComponent text="Geração de palavras-chave " />
-    <div class="mt-10 flex-center gap-10">
-      <div class="gradient-border w-[29vw] h-[29vh] flex">
-        <textarea class="outline-none resize-none bg-transparent text-sm text-white p-2 ml-2 mt-1 w-[23vw] h-[25vh]"
+    <ToolTitle text="Geração de palavras-chave " />
+    <div class="flex-center gap-10">
+      <div class="text-box">
+        <textarea class="outline-none focus:border-none resize-none bg-transparent text-sm	 text-white p-2 ml-2 mt-1 w-[23vw] h-[28vh]"
           name="" id=""></textarea>
         <input class="input-number p-0 text-sm mr-6 mt-6 w-10 h-10" type="number">
       </div>
