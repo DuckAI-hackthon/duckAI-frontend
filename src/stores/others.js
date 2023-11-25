@@ -30,6 +30,18 @@ export const useOtherStore = defineStore('other', {
             } catch (error) {
                 console.log(error)
             }
+        },
+
+        async postKeyGenerator(keyword, text, user_id, ai) {
+            try {
+                //console.log(keyword, text, user_id, ai)
+                const data = await othersService.postGenereatorKeyword(keyword, text, user_id, ai, 4);
+                console.log(keyword)
+                return data;
+            } catch (error) {
+                console.log('oi');
+                console.log(error)
+            }
         }
     }
 })
