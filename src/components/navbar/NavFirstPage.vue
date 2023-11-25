@@ -6,7 +6,11 @@
         <nav>
             <ul class="flex gap-4 m-4 items-center">
                 <NavLi>
-                    <ButtonPrimary text="Ajuda" />
+                    <router-link to="/about">
+                        <ButtonPrimary text="Sobre nós" />
+                    </router-link>
+
+
                 </NavLi>
                 <NavLi>
                     <ButtonLoginSpecial />
