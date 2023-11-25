@@ -1,6 +1,6 @@
 <template>
-    <div class=" mt-[15vh] ml-[4vw]  bg-transparent	flex flex-col">
-        <h1 class="text-white mb-20 text-4xl ">Editar Perfil</h1>
+    <div class=" mt-[24.6vh] ml-[4vw]  bg-transparent	flex flex-col">
+        <h1 class="text-white mb-[10vh] text-4xl ">Editar Perfil</h1>
         
         <label class="flex flex-col gap-1 mb-8" for="">
         <p>Nome de usuário</p>

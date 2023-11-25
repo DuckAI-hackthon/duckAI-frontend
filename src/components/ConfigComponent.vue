@@ -1,10 +1,15 @@
-<script>
-import SimpleArrowComponent from '@/components/icons/SimpleArrowComponent.vue';
-export default {
-    components: {
-        SimpleArrowComponent
-    }
-};
+<script setup>
+import SimpleArrowComponent from '../components/icons/SimpleArrowComponent.vue';
+
+import { dashboardStore } from '@/stores/dashboard'
+
+const myStore = dashboardStore();
+
+function changeTo(slug) {   
+    myStore.changeContentTo(slug)
+}
+
+
 </script>
 
 <template>
@@ -13,7 +18,7 @@ export default {
         <div class="flex flex-row gap-40">
 
             <div>
-                <div class="w-[20vw] justify-between text-lg flex flex-row gap-1 mb-8 cursor-pointer	" for="">
+                <div @click="changeTo('EditProfileComponent')" class="w-[20vw] justify-between text-lg flex flex-row gap-1 mb-8 cursor-pointer	" for="">
                     <p>Editar perfil</p>
                     <SimpleArrowComponent />
                 </div>

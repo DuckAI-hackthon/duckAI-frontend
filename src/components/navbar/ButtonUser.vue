@@ -25,7 +25,7 @@
         </button>
         <div :class="{openDropdown}" class="hidden absolute top-16  bg-slate-800">
             <ul class="flex flex-col items-start">
-                <li class="transition-all hover:bg-slate-600 px-4 py-2 w-full text-left">
+                <li  @click="changeTo('EditProfileComponent')" class="transition-all hover:bg-slate-600 px-4 py-2 w-full text-left">
                     Meu Perfil
                 </li>
                 <li @click="logout" class="transition-all hover:bg-slate-600 px-4 py-2 w-full text-left">
@@ -39,7 +39,13 @@
 import { useUserStore } from '../../stores/user'
 import { ref, computed } from 'vue';
 import { useRouter } from 'vue-router';
+import { dashboardStore } from '../../stores/dashboard'
 
+const myStore = dashboardStore();
+
+function changeTo(slug) {   
+    myStore.changeContentTo(slug)
+}
 
 const router = useRouter();
 const userStore = useUserStore()

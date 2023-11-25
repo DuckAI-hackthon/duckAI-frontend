@@ -1,13 +1,13 @@
 <script setup>
 import TopNav from '@/components/navbar/TopNav.vue'
 import SideNav from '@/components/navbar/SideNav.vue'
-// import ShowTools from '@/components/tools/ShowTools.vue'
-// import TraductionTool from '@/components/tools/tradution-generator/TraductionTool.vue'
-// import GenerationKeyWordTool from '@/components/tools/word-generator/GenerationKeyWordTool.vue'
-// import GenerationTextTool from '@/components/tools/text-generator/GenerationTextTool.vue'
-// import QuestionAndAnswerTool from '@/components/tools/question-generator/QuestionAndAnswerTool.vue'
-// import EditProfileComponent from '@/components/EditProfileComponent.vue'
-import ConfigComponent from '@/components/ConfigComponent.vue'
+import ShowTools from '@/components/tools/ShowTools.vue'
+import TraductionTool from '@/components/tools/tradution-generator/TraductionTool.vue'
+import GenerationKeyWordTool from '@/components/tools/word-generator/GenerationKeyWordTool.vue'
+import GenerationTextTool from '@/components/tools/text-generator/GenerationTextTool.vue'
+import QuestionAndAnswerTool from '@/components/tools/question-generator/QuestionAndAnswerTool.vue'
+import EditProfileComponent from '@/components/EditProfileComponent.vue'
+import ConfigComponent from '../components/ConfigComponent.vue'
 import { dashboardStore } from '@/stores/dashboard.js'
 import { useUserStore } from '@/stores/user'
 import { onMounted } from 'vue'
@@ -39,15 +39,16 @@ onMounted(() => {
             <SideNav />
         </header>
         <main class="w-8/12 m-auto">
-            <!-- <KeepAlive>
-                <showTools @changeContentTo="changeContent($event)" v-if="myStore.mainContent === 'InfoTools'" />
+            <KeepAlive>
+                <ShowTools @changeContentTo="changeContent($event)" v-if="myStore.mainContent === 'InfoTools'" />
                 <TraductionTool v-else-if="myStore.mainContent === 'TraductionToolComponent'" />
                 <GenerationTextTool class="mb-44" v-else-if="myStore.mainContent === 'GenerationTextToolComponent'" />
                 <GenerationKeyWordTool class="mb-44" v-else-if="myStore.mainContent === 'GenerationKeyWordToolComponent'" />
                 <QuestionAndAnswerTool class="mb-44" v-else-if="myStore.mainContent === 'QuestionAndAnswerToolComponent'" />
-            </KeepAlive> -->
-            <ConfigComponent/>
-            <!-- <EditProfileComponent/> -->
+                <EditProfileComponent  class="mb-44" v-else-if="myStore.mainContent === 'EditProfileComponent'" />
+                <ConfigComponent class="mb-44" v-else-if="myStore.mainContent === 'ConfigComponent'" />
+                
+            </KeepAlive>
         </main>
         <footer>
         </footer>
