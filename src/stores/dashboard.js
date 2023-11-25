@@ -4,7 +4,7 @@ import { defineStore } from 'pinia';
 export const dashboardStore = defineStore('dashboard', () => {
     const state = reactive({
         mainContent: 'InfoTools',
-        selectAI: 'chatgpt',
+        selectAI: 1,
     });
 
     const mainContent = computed(() => state.mainContent);

@@ -20,6 +20,7 @@ class OthersService{
                 "from_lang": from_lang,
                 "user_id": user_id
             }
+            console.log(dataResult)
             const result = await axios.post(
                 `http://localhost:8000/ai/?ai=${ai}&type=${type}`, dataResult 
             )

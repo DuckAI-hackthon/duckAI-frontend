@@ -22,7 +22,7 @@ const to_lang = ref("en");
 async function postTranslate() {
     const data = await otherStore.postTranslate(text.value, from_lang.value, to_lang.value, userStore.userData.id, dashStore.selectAI);
     console.log(data.response)
-    choice.value = data.response;
+    choice.value = JSON.stringify(data.response);
 }
 </script>
 

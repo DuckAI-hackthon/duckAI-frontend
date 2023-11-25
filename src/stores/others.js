@@ -20,7 +20,7 @@ export const useOtherStore = defineStore('other', {
         },
         async postTranslate(text, to_lang, from_lang, user_id, ai) {
             try {
-                console.log(dashboardStore().selectAI)
+                console.log(text, to_lang, from_lang, user_id, ai)
                 const data = await othersService.postTranslate(text, to_lang, from_lang, user_id, ai, 2);
                 return data;
             } catch (error) {
