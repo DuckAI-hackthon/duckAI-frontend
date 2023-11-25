@@ -15,7 +15,6 @@ export const useUserStore = defineStore('user', {
     }),
     actions: {
         async login(email, password) {
-            console.log(email, password)
             try {
                 const data = await userService.loginUser(email, password);
                 this.loggedIn = true;

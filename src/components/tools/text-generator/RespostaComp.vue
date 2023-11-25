@@ -1,12 +1,22 @@
 <template>
-    <div class="flex flex-row gap-4 ">
-        <div class="gradient-border h-[6.5vh]">
+    <div class="flex gap-4 items-start justify-center">
+        <div class="gradient-border h-[6.5vh] flex-center">
             IA
         </div>
         <p class="w-[35vw]">
-            Lorem Ipsum is simply dummy text
-            of the printing and typesetting industry.
-            Lorem Ipsum has been the Lorem Ipsum 
+            {{ response }}
         </p>
     </div>
 </template>
+
+<script setup>
+import { defineProps, computed } from 'vue';
+const props = defineProps({
+    choice: {
+        type: String,
+        required: true
+    }
+})
+const response = computed(() => props.choice)
+
+</script>

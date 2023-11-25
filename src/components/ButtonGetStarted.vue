@@ -1,9 +1,9 @@
 <template lang="">
+    <router-link :to="link">
     <button class="btn-get-started hover:bg-indigo-700 transition-all">
-        <router-link :to="link">
             {{ text}}
-        </router-link>
-    </button>
+        </button>
+    </router-link>
 </template>
 <script>
 export default {

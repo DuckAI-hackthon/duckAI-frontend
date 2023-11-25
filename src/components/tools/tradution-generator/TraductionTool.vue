@@ -13,7 +13,7 @@ export default {
 </script>
 
 <template>
-    <main>
+    <main class="pt-32 pb-32">
         <ToolTitle text="Tradução de texto"/>
         <ToolContainerComponent/>
     </main>
