@@ -1,31 +1,55 @@
-<script>
-import ButtonLoginRegister from '../ButtonLoginRegister.vue';
+<script setup>
+import { userOperationsStore } from '@/stores/user'
+import { computed, ref } from 'vue';
+import { useRouter } from 'vue-router';
 
-export default {
-    components: {
-        ButtonLoginRegister
-    },
-};
+const router = useRouter();
+
+const operationsStore = userOperationsStore()
+
+const userData = computed(()=> operationsStore.userData)
+
+const email = ref(null)
+const password = ref(null)
+const ShowPassword = ref(false)
+
+async function loginUser() {
+    await operationsStore.loginUser(email.value, password.value);
+    if(userData.value.message == "Login realizado com sucesso!"){
+        router.push({
+            name: 'dashboard',
+        })
+    }
+}
 </script>
 
 <template>
     <form class="flex-col-center gap-2" action="">
         <label>
             <p class="text-sm">E-mail</p>
-            <input class="input-login my-1" type="email">
+            <input class="input-login my-1" type="email" v-model="email">
         </label>
         <label>
             <div class="flex flex-row just items-center justify-between	">
                 <p class="text-sm">Senha</p>
-                <p class="text-xs">Mostrar</p>
+                <p class="text-xs cursor-pointer" @click="ShowPassword = !ShowPassword">Mostrar</p>
             </div>
-            <input class="input-login my-1" type="password">
+            <input class="input-login my-1" :type="ShowPassword ? 'text' : 'password'" v-model="password">
             <p class="text-xs">Use 8 caracteres ou mais.</p>
         </label>
         <label class="flex-login gap-4 pt-4">
-            <ButtonLoginRegister text="Logar" link="/"/>
-            <p class="text-sm">Ainda não possuí uma conta? <router-link to="/register">Registre-se!</router-link></p>
+            <div class="btn-primary hover:bg-indigo-700" @click="loginUser">
+                Login
+            </div>      
+            <Router-link to="/register">
+            <p class="text-sm text-left">Não possuí uma conta? <br> Cadastre-se!</p>
+            </Router-link>
         </label>
     </form>
 
 </template>
+<style scoped>
+.btn-primary {
+    @apply bg-primary opacity-70 text-black p-3 px-5 cursor-pointer duration-300 rounded-full hover:opacity-100;
+}
+</style>
