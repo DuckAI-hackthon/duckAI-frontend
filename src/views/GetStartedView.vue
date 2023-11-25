@@ -26,7 +26,7 @@ export default {
 </script>
 
 <template>
-    <div class="w-screen h-screen bg-black text-white box-border">
+    <div class="w-screen h-screen text-white box-border">
         <div class="container-content h-full pt-4 flex-col flex justify-between box-border ">
             <NavGetSarted />
             <ContainerMain class="flex justify-between items-center overflow-visible">
@@ -36,7 +36,7 @@ export default {
                     <ButtonGetStarted text="Comece agora!" />
                 </div>
                 <div>
-                    <img :src="`./images/pato4.png`" alt="">
+                    <img :src="`./images/logo-pato.png`" alt="">
                 </div>
             </ContainerMain> 
             <footer>

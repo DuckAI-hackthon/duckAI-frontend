@@ -27,7 +27,7 @@ export default {
 </script>
 
 <template>
-    <div class="w-full flex justify-center items-center bg-black text-white">
+    <div class="w-full flex justify-center items-center bg-black2 text-white">
         <header>
             <TopNav 
                 @changeToolNav="changeTo($event)"
@@ -47,3 +47,9 @@ export default {
         </footer>
     </div>
 </template>
+
+<style scoped>
+.bg-black2 {
+    background-color: #0000007e;
+}
+</style>
