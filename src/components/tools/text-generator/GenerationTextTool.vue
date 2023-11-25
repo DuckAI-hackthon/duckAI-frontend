@@ -1,11 +1,11 @@
 <script>
-import ToolTitleComponent from './ToolTitleComponent.vue'
+import ToolTitle from '../ToolTitle.vue'
 import GenTextContainerComponent from './GenTextContainerComponent.vue'
 
 export default {
     components: {
         GenTextContainerComponent,
-        ToolTitleComponent
+        ToolTitle
     },
 }
 
@@ -13,8 +13,8 @@ export default {
 </script>
 
 <template>
-    <main>
-        <ToolTitleComponent text="Geração de resumo "/>
+    <main class="pt-32 pb-32">
+        <ToolTitle text="Geração de resumo "/>
         <GenTextContainerComponent/>
     </main>
         

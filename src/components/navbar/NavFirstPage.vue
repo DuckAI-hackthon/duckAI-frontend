@@ -6,7 +6,7 @@
         <nav>
             <ul class="flex gap-4 m-4 items-center">
                 <NavLi>
-                    <ButtonPrimary text="Ajuda" />
+                    <ButtonPrimary link="/sobre-nos" text="Sobre Nós" />
                 </NavLi>
                 <NavLi>
                     <ButtonLoginSpecial />
@@ -16,7 +16,7 @@
     </div>
 </template>
 <script>
-import NavLi from '@/components/NavLi.vue'
+import NavLi from './NavLi.vue'
 import ButtonPrimary from '@/components/ButtonPrimary.vue'
 import ButtonLoginSpecial from '@/components/ButtonLoginSpecial.vue'
 

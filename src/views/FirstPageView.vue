@@ -1,5 +1,5 @@
 <script>
-import NavGetSarted from '@/components/get-started/NavGetSarted.vue'
+import NavFirstPage from '@/components/navbar/NavFirstPage.vue'
 import ShortCredit from '@/components/ShortCredit.vue'
 import TitleSpecial from '@/components/TitleSpecial.vue'
 import SubTitle from '@/components/SubTitle.vue'
@@ -7,9 +7,9 @@ import ButtonGetStarted from '@/components/ButtonGetStarted.vue'
 import ContainerMain from '@/components/ContainerMain.vue'
 
 export default {
-    name: 'GetStarted',
+    name: 'FirstPage',
     components: {
-        NavGetSarted,
+        NavFirstPage,
         ShortCredit,
         TitleSpecial,
         SubTitle,
@@ -28,15 +28,15 @@ export default {
 <template>
     <div class="w-screen h-screen text-white box-border">
         <div class="container-content h-full pt-4 flex-col flex justify-between box-border ">
-            <NavGetSarted />
+            <NavFirstPage />
             <ContainerMain class="flex justify-between items-center overflow-visible">
                 <div  class="gap-4 w-full flex flex-col">
                     <TitleSpecial :text="title" />
                     <SubTitle :text="subTitle" />
-                    <ButtonGetStarted text="Comece agora!" />
+                    <ButtonGetStarted class="mt-6" text="Comece agora!" />
                 </div>
                 <div>
-                    <img :src="`./images/logo-pato.png`" alt="">
+                    <img :src="`./images/logo-pato.png`" class="2xl:mr-24"  alt="">
                 </div>
             </ContainerMain> 
             <footer>
