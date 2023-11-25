@@ -11,7 +11,7 @@ const ShowPassword = ref(false)
 
 async function registerUser(){
     if(password.value === confirmPassword.value){
-        await newUserOperationsStore.registerUser(email.value, password.value, name.value)
+        await newUserOperationsStore.register(email.value, password.value, name.value)
         if (userOperationsStore.registerUser === 201){
             console.log("Usuario cadastrado")
         }

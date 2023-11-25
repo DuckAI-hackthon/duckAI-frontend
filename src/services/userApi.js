@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export default class userOperations{
+class UserOperations{
     async registerUser(email, password, name){
         try{
             const result = await axios.post(
@@ -33,3 +33,5 @@ export default class userOperations{
         }
     }
 }
+
+export default new UserOperations();

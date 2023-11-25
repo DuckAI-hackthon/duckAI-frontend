@@ -1,5 +1,5 @@
 <script>
-import NavFirstPage from '@/components/NavFirstPage.vue'
+import NavFirstPage from '@/components/navbar/NavFirstPage.vue'
 import ShortCredit from '@/components/ShortCredit.vue'
 import TitleSpecial from '@/components/TitleSpecial.vue'
 import SubTitle from '@/components/SubTitle.vue'

@@ -1,11 +1,11 @@
 <script>
-import ToolTitleComponent from './ToolTitleComponent.vue'
+import ToolTitle from '../ToolTitle.vue'
 import GenAnswer from './GenAnswer.vue'
 
 export default {
     components: {
         GenAnswer,
-        ToolTitleComponent
+        ToolTitle
     },
 }
 
@@ -14,7 +14,7 @@ export default {
 
 <template>
     <main>
-        <ToolTitleComponent text="Perguntas e Respostas "/>
+        <ToolTitle text="Perguntas e Respostas "/>
         <GenAnswer />
     </main>
         

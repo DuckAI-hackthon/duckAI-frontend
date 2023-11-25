@@ -16,7 +16,7 @@
     </div>
 </template>
 <script>
-import NavLi from '@/components/NavLi.vue'
+import NavLi from './NavLi.vue'
 import ButtonPrimary from '@/components/ButtonPrimary.vue'
 import ButtonLoginSpecial from '@/components/ButtonLoginSpecial.vue'
 

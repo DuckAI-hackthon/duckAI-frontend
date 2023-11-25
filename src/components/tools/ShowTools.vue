@@ -33,7 +33,7 @@
     </div>
 </template>
 <script>
-import InfoTools from '@/components/InfoTool.vue'
+import InfoTools from './InfoTool.vue'
 export default {
     components: {
         InfoTools
