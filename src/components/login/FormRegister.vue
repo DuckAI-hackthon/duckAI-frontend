@@ -1,8 +1,9 @@
 <script setup>
 import { ref } from 'vue';
 import { useUserStore } from '../../stores/user'
+import { useRouter } from 'vue-router';
 const userStore = useUserStore();
-
+const router = useRouter();
 const name = ref('');
 const email = ref('');
 const password = ref('');
@@ -18,7 +19,7 @@ async function registerUser(){
         msg.value ="As senhas devem ser iguais!"
     }else{
         await userStore.register(email.value, password.value, name.value)
-        this.$push('/dashboard')
+        router.push('/dashboard')
     }
 }
 

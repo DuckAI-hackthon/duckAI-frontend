@@ -1,15 +1,22 @@
 <script setup>
-import { useOtherStore } from '@/stores/others';
-import { computed, ref } from 'vue';
+import {  ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { useUserStore } from '../../stores/user'
-
+import { dashboardStore } from '../../stores/dashboard'
 const openMenu = ref(false);
-const otherStore = useOtherStore();
-const ais = computed(() => otherStore.ais);
-
 const userStore = useUserStore()
 const router = useRouter();
+
+const myStore = dashboardStore();
+const select = ref('')
+
+select.value = myStore.selectAI
+
+function changeAi(newContent) {
+    myStore.changeAiTo(newContent);
+    select.value = newContent;
+}
+
 async function logout() {
     try {
         await userStore.login('', '');
@@ -41,8 +48,23 @@ async function logout() {
         </button>
         <section>
             <ul class="flex flex-col w-72">
-                <li class="hover:border-l-2 pl-4 py-4 cursor-pointer border-primary" v-for="ai in ais" :key="ai.id">
-                    <span class="pr-2"><img :src="ai.image.file" class="w-4" alt=""> </span> <span> {{ ai.name  }} </span>
+                <li @click="changeAi('chatgpt')" :class="{'select': select == 'chatgpt'}" class="hover:border-l-2 pl-4 py-4 cursor-pointer border-primary">
+                    <span class="pr-2 flex gap-4">
+                        <img :src="`./images/icons/chatgpt.webp`" class="w-8" alt="">
+                        Chatgpt
+                    </span>
+                </li>
+                <li @click="changeAi('hercai')" :class="{'select': select == 'hercai'}" class="hover:border-l-2 pl-4 py-4 cursor-pointer border-primary">
+                    <span class="pr-2 flex gap-4">
+                        <img :src="`./images/icons/hercai.png`" class="w-8" alt="">
+                        Hercai
+                    </span>
+                </li>
+                <li @click="changeAi('lhama')" :class="{'select': select == 'lhama'}" class="hover:border-l-2 pl-4 py-4 cursor-pointer border-primary">
+                    <span class="pr-2 flex gap-4">
+                        <img :src="`./images/icons/meta.png`" class="w-8" alt="">
+                        Lhama
+                    </span>
                 </li>
             </ul>
         </section>
@@ -68,11 +90,13 @@ async function logout() {
 <style scoped>
 
 .openMenu {
-    @apply w-64 shadow-lg bg-slate-700 z-10 transition-all;
+    @apply w-64 shadow-lg bg-zinc-900 z-10 transition-all;
 }
 
 .animation {
     @apply transition-all duration-500;
 }
-
+.select{
+    @apply border-l-2 border-primary
+}
 </style>
