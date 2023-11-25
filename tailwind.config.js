@@ -13,6 +13,8 @@ module.exports = {
         gray: "#00000059",
         primary: "#6843EC",
         secondary: "#00000059",
+        tertiary: "#D94FD5",
+        quaternary: "#8B8D90"
       },
     },
   },

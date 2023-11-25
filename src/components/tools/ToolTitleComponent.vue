@@ -9,5 +9,8 @@ export default {
 }
 </script>
 <template>
-    <h1 class="text-6xl	text-center	">{{ text }}</h1>
+    <h1 class="text-6xl	text-center text-gradient	">{{ text }}</h1>
 </template>
+
+<style>
+</style>
