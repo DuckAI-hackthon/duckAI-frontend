@@ -6,6 +6,7 @@ import { ref } from 'vue'
 
 import { useOtherStore } from "@/stores/others";
 import { useUserStore } from "@/stores/user";
+import ButtonPrimary from '@/components/ButtonPrimary.vue';
 
 const otherStore = useOtherStore();
 const userStore = useUserStore();
@@ -38,8 +39,9 @@ async function postTranslate() {
             <textarea class="gradient-border text-white  mt-10 w-[24vw] h-[30vh]" name="" id=""
                 placeholder="Digitar texto" v-model="texto"></textarea>
         </div>
-        <div>
+        <div class="flex flex-col gap-16 justify-center items-center">
             <ArrowsSvgComponent />
+            <ButtonPrimary text="traduzir" @click="postTranslate" />
         </div>
 
         <div class="flex-col-center">
@@ -54,7 +56,4 @@ async function postTranslate() {
                 placeholder="Digitar texto" v-model="resposta"></textarea>
         </div>
     </section>
-    <button class="bg-red-500 w-16 p-5" @click="postTranslate">
-        traduzir
-      </button>
 </template>

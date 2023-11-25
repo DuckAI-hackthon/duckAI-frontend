@@ -42,8 +42,9 @@ async function GeneratorKey() {
     <input v-model="text" class="input-chat pl-8" type="text" placeholder="Digite seu texto aqui" />
     <button @click="GeneratorKey" class="flex-center rounded-lg w-[4.5vh] h-[4.5vh] bg-primary">
         <img src="@/assets/images/pointer.png" alt="" class="w-[2vh] h-[2vh]" />
-    </button>
-  </div>
+      </button>
+    </div>
+  </section>
 </template>
 <style>
 .input-number {
