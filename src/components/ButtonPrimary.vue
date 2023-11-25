@@ -1,9 +1,9 @@
 <template lang="">
+    <router-link :to="link">
     <div class="btn-primary hover:bg-indigo-700">
-        <router-link :to="link">
             {{ text }}
-        </router-link>
-    </div>
+        </div>
+    </router-link>
 </template>
 <script>
 export default {

@@ -6,7 +6,7 @@
                     alt=""
                     class="w-6 h-6"
                 />
-                <p>Nome</p>
+                <p>{{ userData.email }}</p>
                 <svg class="w-3 h-3"
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -28,19 +28,29 @@
                 <li class="transition-all hover:bg-slate-600 px-4 py-2 w-full text-left">
                     Meu Perfil
                 </li>
-                <li class="transition-all hover:bg-slate-600 px-4 py-2 w-full text-left">
+                <li @click="logout" class="transition-all hover:bg-slate-600 px-4 py-2 w-full text-left">
                     Sair
                 </li>
             </ul>
         </div>
     </div>
 </template>
-<script>
-export default {
-    data() {
-        return {
-            openDropdown: false
-        }
+<script setup>
+import { useUserStore } from '../../stores/user'
+import { ref, computed } from 'vue';
+import { useRouter } from 'vue-router';
+const router = useRouter();
+const userStore = useUserStore()
+
+const userData = computed(() => userStore.userData)
+console.log(userData.value)
+const openDropdown = ref(false)
+async function logout() {
+    try {
+        await userStore.login('', '');
+        router.push('/login');
+    } catch (error) {
+        console.log('error', error);
     }
 }
 </script>

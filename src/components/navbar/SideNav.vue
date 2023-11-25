@@ -1,24 +1,21 @@
-<script>
-export default {
-    data(){
-        return {
-            ias: [
-                {
-                    img: 'img',
-                    nome: 'ia1'
-                },
-                {
-                    img: 'img',
-                    nome: 'ia2'
-                },
-                {
-                    img: 'img',
-                    nome: 'ia3'
-                },
-                
-            ],
-            openMenu: false,
-        }
+<script setup>
+import { useOtherStore } from '@/stores/others';
+import { computed, ref } from 'vue';
+import { useRouter } from 'vue-router';
+import { useUserStore } from '../../stores/user'
+
+const openMenu = ref(false);
+const otherStore = useOtherStore();
+const ais = computed(() => otherStore.ais);
+
+const userStore = useUserStore()
+const router = useRouter();
+async function logout() {
+    try {
+        await userStore.login('', '');
+        router.push('/login');
+    } catch (error) {
+        console.log('error', error);
     }
 }
 </script>
@@ -44,8 +41,8 @@ export default {
         </button>
         <section>
             <ul class="flex flex-col w-72">
-                <li class="hover:border-l-2 pl-4 py-4 cursor-pointer border-primary" v-for="ia in ias" :key="ia.nome">
-                    <span class="pr-2"> {{ ia.img  }} </span> <span> {{ ia.nome  }} </span>
+                <li class="hover:border-l-2 pl-4 py-4 cursor-pointer border-primary" v-for="ai in ais" :key="ai.id">
+                    <span class="pr-2"><img :src="ai.image.file" class="w-4" alt=""> </span> <span> {{ ai.name  }} </span>
                 </li>
             </ul>
         </section>
@@ -57,7 +54,7 @@ export default {
                 </svg>
                 <span> Configurações </span>
             </li>
-            <li class="hover:border-l-2 pl-4 cursor-pointer border-primary flex gap-4">
+            <li @click="logout" class="hover:border-l-2 pl-4 cursor-pointer border-primary flex gap-4">
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="21" viewBox="0 0 22 21" fill="none">
                     <path d="M13.7253 5.80336V4.87036C13.7253 2.83536 12.0753 1.18536 10.0403 1.18536H5.16526C3.13126 1.18536 1.48126 2.83536 1.48126 4.87036V16.0004C1.48126 18.0354 3.13126 19.6854 5.16526 19.6854H10.0503C12.0793 19.6854 13.7253 18.0404 13.7253 16.0114V15.0684M20.5188 10.4353H8.47776M20.5188 10.4353L17.5905 7.52016M20.5188 10.4353L17.5905 13.3512" stroke="#AEB1B5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>

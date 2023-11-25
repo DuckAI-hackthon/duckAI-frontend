@@ -1,6 +1,12 @@
 * {
     margin: 0;
     padding: 0;
+
+}
+
+.input-chat {
+    @apply w-[50vw] h-[6vh] px-3 outline-none border-none focus:border-[#6843EC];
+    background: none;
 }
 
 @import 'tailwindcss/base';
@@ -26,7 +32,7 @@
 }
 
 .input-login {
-    @apply rounded-lg border border-black text-sm text-gray outline-none focus:border-[#6843EC];
+    @apply rounded-lg border border-black text-sm outline-none focus:border-[#6843EC];
     width: 22vw;
     padding: 1vh 1vw;
 }
@@ -35,6 +41,10 @@
 
 body {
     font-family: 'Poppins', sans-serif;
+    background: url('./images/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 .gradient-border{
     @apply py-3 px-4 rounded-[10px] ;
@@ -84,3 +94,4 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+

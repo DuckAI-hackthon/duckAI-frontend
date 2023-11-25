@@ -46,7 +46,12 @@ article {
 article h3 {
     transition: all .3s ease-in-out;
 }
- article:hover h3 {
+
+article h2 {
+    color: #fff;
+}
+
+article:hover h3 {
     color: #6843EC;
 }
 </style>
