@@ -1,12 +1,5 @@
 <script>
-import ButtonLoginRegister from '../ButtonLoginRegister.vue';
 
-export default {
-    components: {
-        ButtonLoginRegister
-
-    }
-};
 </script>
 
 <template>
@@ -24,9 +17,15 @@ export default {
             <p class="text-xs">Use 8 caracteres ou mais.</p>
         </label>
         <label class="flex-login gap-4 pt-4">
-            <ButtonLoginRegister text="Logar" link="/"/>
-            <p class="text-sm">Já possuí conta? Faça Login </p>
+            <div class="btn-primary hover:bg-indigo-700">
+                Login
+            </div>      
+            <p class="text-sm text-left">Não possuí uma conta? <br> Cadastre-se!</p>
         </label>
     </form>
 
 </template>
+<style scoped>
+.btn-primary {
+    @apply bg-primary opacity-70 text-black p-3 px-5 cursor-pointer duration-300 rounded-full hover:opacity-100;
+}</style>
