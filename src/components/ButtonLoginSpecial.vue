@@ -6,8 +6,8 @@
             </router-link>
         </span>
         <button class="bg-primary hover:bg-indigo-700 transition-all text-white p-2 px-8 cursor-pointer rounded-3xl">
-            <router-link to="/">
-                Get Started
+            <router-link to="/register">
+                Crie uma conta
             </router-link>
         </button>
             <!-- @clickButtonPrimary="clickButtonPrimary"  -->
