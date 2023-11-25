@@ -9,16 +9,21 @@ import QuestionAndAnswerTool from '@/components/tools/question-generator/Questio
 import { dashboardStore } from '@/stores/dashboard.js'
 import { useUserStore } from '@/stores/user'
 import { onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 
 const myStore = dashboardStore();
 const userStore = useUserStore();
-        
+const router = useRouter(); 
+
 function changeContent(newContent) {
     myStore.changeContentTo(newContent);
 }
 
 onMounted(() => {
-    console.log(userStore.userData)
+    if(userStore.userData.email === null || userStore.userData.email === undefined || userStore.userData.email === '') {
+        console.log('Faça login para continuar')
+        router.push('/login');
+    }
 })
 
 </script>
@@ -31,13 +36,13 @@ onMounted(() => {
             />
             <SideNav />
         </header>
-        <main class="pt-32 w-8/12 m-auto h-screen">
+        <main class="w-8/12 m-auto">
             <KeepAlive>
                 <showTools @changeContentTo="changeContent($event)" v-if="myStore.mainContent === 'InfoTools'" />
                 <TraductionTool v-else-if="myStore.mainContent === 'TraductionToolComponent'" />
-                <GenerationTextTool v-else-if="myStore.mainContent === 'GenerationTextToolComponent'" />
-                <GenerationKeyWordTool v-else-if="myStore.mainContent === 'GenerationKeyWordToolComponent'" />
-                <QuestionAndAnswerTool v-else-if="myStore.mainContent === 'QuestionAndAnswerToolComponent'" />
+                <GenerationTextTool class="mb-44" v-else-if="myStore.mainContent === 'GenerationTextToolComponent'" />
+                <GenerationKeyWordTool class="mb-44" v-else-if="myStore.mainContent === 'GenerationKeyWordToolComponent'" />
+                <QuestionAndAnswerTool class="mb-44" v-else-if="myStore.mainContent === 'QuestionAndAnswerToolComponent'" />
             </KeepAlive>
         </main>
         <footer>

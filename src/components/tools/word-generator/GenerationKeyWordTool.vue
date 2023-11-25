@@ -1,32 +1,52 @@
-<script>
+<script setup>
 import ToolTitle from "../ToolTitle.vue";
 
-export default {
-  name: "DashBoard",
-  components: {
-    ToolTitle,
-  },
-};
+import { ref } from 'vue'
+
+import { useOtherStore } from "@/stores/others";
+import { useUserStore } from "@/stores/user";
+
+const otherStore = useOtherStore();
+const userStore = useUserStore();
+
+const text = ref("");
+const choice = ref("");
+
+async function GeneratorKey() {
+  console.log(text.value)
+  const data = await otherStore.postKeyGenerator(text.value, 11, userStore.userData.id, 1);
+
+  choice.value = data.response.response;
+}
 </script>
 <template>
+  <section class="pt-32 pb-32">
   <article>
     <ToolTitle text="Geração de palavras-chave " />
     <div class="flex-center gap-10">
-      <div class="text-box">
-        <textarea class="outline-none focus:border-none resize-none bg-transparent text-sm	 text-white p-2 ml-2 mt-1 w-[23vw] h-[28vh]"
-          name="" id=""></textarea>
-        <input class="input-number p-0 text-sm mr-6 mt-6 w-10 h-10" type="number">
+      <div class="gradient-border w-4/6 h-[36vh]">
+        Texto
+        <p class="w-full p-2">
+          {{ text }}
+        </p>
       </div>
-      <ul class="gradient-border w-[38vw] h-[29vh] flex">
-        <li class="text-sm text-white p-2 ml-2 mt-1 w-[37vw] h-[25vh]" >Palavra-chave</li>
-      </ul>
+      <div class="gradient-border h-[36vh] flex flex-col justify-start gap-4 items-center">
+        Palavras Chave
+        <ul class="text-sm justify-start items-center text-white px-4 flex flex-col gap-4 p-2">
+          <li>
+            {{ choice }}
+          </li>
+        </ul>
+      </div>
     </div>
   </article>
-  <div class="flex-center gap-[7vw]	gradient-border w-[60vw] absolute bottom-8">
-            <input class="input-chat" type="text">
-            <button class="flex-center rounded-lg w-[4.5vh] h-[4.5vh] bg-primary"><img src="@/assets/images/pointer.png"
-                    alt="" class=" w-[2vh] h-[2vh]" /> </button>
-        </div>
+  <div class="flex-center gap-[7vw] gradient-border absolute bottom-8">
+    <input v-model="text" class="input-chat pl-8" type="text" placeholder="Digite seu texto aqui" />
+    <button @click="GeneratorKey" class="flex-center rounded-lg w-[4.5vh] h-[4.5vh] bg-primary">
+        <img src="@/assets/images/pointer.png" alt="" class="w-[2vh] h-[2vh]" />
+      </button>
+    </div>
+  </section>
 </template>
 <style>
 .input-number {
