@@ -22,6 +22,7 @@
             <input class="input-chat" type="text">
             <button class="flex-center rounded-lg w-[4.5vh] h-[4.5vh] bg-primary"><img src="@/assets/images/pointer.png" alt="" class=" w-[2vh] h-[2vh]" /> </button>
         </div>
+        <!-- teste -->
     </div>
 </template>
 
