@@ -1,7 +1,8 @@
 <script setup>
 import { useOtherStore } from '@/stores/others';
-import { computed, onMounted } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 
+const openMenu = ref(false);
 const otherStore = useOtherStore();
 
 const ais = computed(() => otherStore.ais);

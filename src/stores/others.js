@@ -24,6 +24,16 @@ export const useOtherStore = defineStore('other', {
             } catch (error) {
                 console.log(error)
             }
+        },
+        async postGeneratorText(text, user_id, ai) {
+            try {
+                console.log(text, user_id, ai)
+                const data = await othersService.postGeneratorText(text, user_id, ai, 3);
+                console.log(data)
+                return data;
+            } catch (error) {
+                console.log(error)
+            }
         }
     }
 })

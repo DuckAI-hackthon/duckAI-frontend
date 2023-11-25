@@ -12,21 +12,27 @@ export default {
   <article>
     <ToolTitle text="Geração de palavras-chave " />
     <div class="flex-center gap-10">
-      <div class="text-box">
-        <textarea class="outline-none focus:border-none resize-none bg-transparent text-sm	 text-white p-2 ml-2 mt-1 w-[23vw] h-[28vh]"
-          name="" id=""></textarea>
-        <input class="input-number p-0 text-sm mr-6 mt-6 w-10 h-10" type="number">
+      <div class="gradient-border w-4/6 h-[36vh]">
+        <p class="w-full p-2">
+          Seu texto aparece aqui.
+        </p>
       </div>
-      <ul class="gradient-border w-[38vw] h-[29vh] flex">
-        <li class="text-sm text-white p-2 ml-2 mt-1 w-[37vw] h-[25vh]" >Palavra-chave</li>
-      </ul>
+      <div class="gradient-border h-[36vh] flex flex-col justify-start gap-4 items-center">
+        Palavras Chave
+        <ul class="text-sm justify-start items-center text-white px-4 flex flex-col gap-4 p-2">
+          <li>
+            palavras
+          </li>
+        </ul>
+      </div>
     </div>
   </article>
-  <div class="flex-center gap-[7vw]	gradient-border w-[60vw] absolute bottom-8">
-            <input class="input-chat" type="text">
-            <button class="flex-center rounded-lg w-[4.5vh] h-[4.5vh] bg-primary"><img src="@/assets/images/pointer.png"
-                    alt="" class=" w-[2vh] h-[2vh]" /> </button>
-        </div>
+  <div class="flex-center gap-[7vw] gradient-border absolute bottom-8">
+    <input v-model="text" class="input-chat pl-8" type="text" placeholder="Digite seu texto aqui" />
+    <button @click="postGeneratorText" class="flex-center rounded-lg w-[4.5vh] h-[4.5vh] bg-primary">
+        <img src="@/assets/images/pointer.png" alt="" class="w-[2vh] h-[2vh]" />
+    </button>
+  </div>
 </template>
 <style>
 .input-number {

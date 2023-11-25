@@ -20,7 +20,6 @@ async function postTranslate() {
     const data = await otherStore.postTranslate(text.value, from_lang.value, to_lang.value, userStore.userData.id, 1);
     choice.value = data.response.response;
 }
-
 </script>
 
 <template>

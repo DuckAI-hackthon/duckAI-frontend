@@ -29,6 +29,22 @@ class OthersService{
             return error;
         }
     }
+    async postGeneratorText(text, user_id, ai, type) {
+        try {
+            const dataResult = {
+                "text": text,
+                "user_id": user_id,
+                'words': 100,
+            }
+            const result = await axios.post(
+                `http://localhost:8000/ai/?ai=${ai}&type=${type}`, dataResult 
+            )
+            return result.data;
+        } catch (error) {
+            console.error(error)
+            return error;
+        }
+    }
 }
 
 export default new OthersService();
