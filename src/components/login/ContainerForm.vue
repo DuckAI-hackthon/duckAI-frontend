@@ -4,8 +4,7 @@ import ButtonLoginRegister from '../ButtonLoginRegister.vue';
 export default {
     components: {
         ButtonLoginRegister
-
-    }
+    },
 };
 </script>
 
