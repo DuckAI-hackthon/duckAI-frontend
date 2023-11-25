@@ -28,4 +28,5 @@
 <style scoped>
 .btn-primary {
     @apply bg-primary opacity-70 text-black p-3 px-5 cursor-pointer duration-300 rounded-full hover:opacity-100;
-}</style>
+}
+</style>
