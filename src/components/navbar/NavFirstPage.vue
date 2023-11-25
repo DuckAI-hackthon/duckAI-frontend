@@ -6,10 +6,7 @@
         <nav>
             <ul class="flex gap-4 m-4 items-center">
                 <NavLi>
-                    <router-link to="/about">
-                        <ButtonPrimary text="Sobre nós" />
-                    </router-link>
-
+                    <ButtonPrimary link="/about" text="Sobre Nós" />
                 </NavLi>
                 <NavLi>
                     <ButtonLoginSpecial />

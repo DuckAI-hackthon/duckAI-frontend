@@ -30,7 +30,7 @@ onMounted(() => {
         <div class="mt-12 text-center text-white">
         <h1 class="text-5xl">Sobre nós</h1>
         <p class="text-2xl">Uma breve apresentação sobre os desenvolvedores da DuckAI!</p>
-        <img src="/images/logo-pato.png" class="mx-auto w-20">
+        <img src="/images/logo-pato.png" class="mx-auto w-20 rounded-3xl">
         </div>
         <div class="w-3/4 mx-auto flex gap-6" v-for="(dev, index) in devsData"  :key="dev.name" 
         :class="index % 2 === 0 ? 'flex-row-reverse' : 'flex-row'">
