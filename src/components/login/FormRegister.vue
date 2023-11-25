@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from 'vue';
 import { useUserStore } from '../../stores/user'
-
 const userStore = useUserStore();
 
 const name = ref('');
@@ -56,9 +55,11 @@ async function registerUser(){
                 <div class="btn-primary hover:bg-indigo-700" @click="registerUser()">
                     Cadastrar
                 </div>    
-                <Router-link to="/login">  
-                <p class="text-sm">Já possuí conta? Faça Login </p>
-                </Router-link>
+                <p class="text-sm">Já possuí conta?
+                    <Router-link class="text-primary" to="/login">  
+                     Faça Login 
+                    </Router-link>
+                    </p>
 
 
         </label>    

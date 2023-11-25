@@ -5,11 +5,11 @@
                 Login
             </router-link>
         </span>
+        <router-link to="/register">
         <button class="bg-primary hover:bg-indigo-700 transition-all text-white p-2 px-8 cursor-pointer rounded-3xl">
-            <router-link to="/register">
                 Crie uma conta
-            </router-link>
-        </button>
+            </button>
+        </router-link>
             <!-- @clickButtonPrimary="clickButtonPrimary"  -->
     </div>
 </template>
