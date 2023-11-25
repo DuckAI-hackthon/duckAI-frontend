@@ -16,6 +16,12 @@ export default {
         return {
             mainContent: 'InfoTools',
         }
+    },
+    methods: {
+        changeTo(slug) {
+            console.log(slug);
+            this.mainContent = slug;
+        }
     }
 }
 </script>
@@ -23,15 +29,19 @@ export default {
 <template>
     <div class="w-full flex justify-center items-center bg-black text-white">
         <header>
-            <TopNav />
+            <TopNav 
+                @changeToolNav="changeTo($event)"
+            />
             <SideNav />
         </header>
         <main class="pt-32 w-8/12 m-auto h-screen">
-            <showTools v-if="mainContent === 'InfoTools'" />
-            <TraductionToolComponent v-else-if="mainContent === 'TraductionToolComponent'" />
-            <GenerationTextToolComponent v-else-if="mainContent === 'GenerationTextToolComponent'" />
-            <GenerationKeyWordToolComponent v-else-if="mainContent === 'GenerationKeyWordToolComponent'" />
-            <QuestionAndAnswerToolComponent v-else-if="mainContent === 'QuestionAndAnswerToolComponent'" />
+            <KeepAlive>
+                <showTools @changeContentTo="changeTo($event)" v-if="mainContent === 'InfoTools'" />
+                <TraductionToolComponent v-else-if="mainContent === 'TraductionToolComponent'" />
+                <GenerationTextToolComponent v-else-if="mainContent === 'GenerationTextToolComponent'" />
+                <GenerationKeyWordToolComponent v-else-if="mainContent === 'GenerationKeyWordToolComponent'" />
+                <QuestionAndAnswerToolComponent v-else-if="mainContent === 'QuestionAndAnswerToolComponent'" />
+            </KeepAlive>
         </main>
         <footer>
         </footer>
