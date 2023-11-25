@@ -60,8 +60,10 @@ export const useOtherStore = defineStore('other', {
         },
         async postChatQEA(text, user_id, ai) {
             try {
+                console.log(ai)
                 const data = await othersService.postChatQEA(text, user_id, ai, 1);
                 this.getChatHistory(user_id, ai);
+                console.log(this.chatHistory)
                 return data;
             } catch (error) {
                 console.log(error)
