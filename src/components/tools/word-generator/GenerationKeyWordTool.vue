@@ -27,10 +27,10 @@ export default {
       </div>
     </div>
   </article>
-  <div class="flex-center gap-[7vw] gradient-border absolute bottom-8">
-    <input v-model="text" class="input-chat pl-8" type="text" placeholder="Digite seu texto aqui" />
-    <button @click="postGeneratorText" class="flex-center rounded-lg w-[4.5vh] h-[4.5vh] bg-primary">
-        <img src="@/assets/images/pointer.png" alt="" class="w-[2vh] h-[2vh]" />
+  <div class="flex-center gap-[7vw] gradient-border w-[60vw] fixed bottom-8">
+    <input v-model="message" class="input-chat" type="text" />
+    <button class="flex-center rounded-lg w-[4.5vh] h-[4.5vh] bg-primary">
+      <img src="@/assets/images/pointer.png" alt="" class="w-[2vh] h-[2vh]" />
     </button>
   </div>
 </template>
