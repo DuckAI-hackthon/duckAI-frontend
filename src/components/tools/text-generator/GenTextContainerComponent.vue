@@ -35,7 +35,6 @@ async function postGeneratorText() {
             resolve()
             keyLoader.value = !keyLoader.value
         }, 1000)
-    })
-    choice.value = 'teste';
+    });
 }
 </script>
