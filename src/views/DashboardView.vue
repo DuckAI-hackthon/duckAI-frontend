@@ -4,6 +4,8 @@ import SideNav from '@/components/navbar-dashboard/SideNav.vue'
 import ShowTools from '@/components/ShowTools.vue'
 import TraductionToolComponent from '@/components/tools/TraductionToolComponent.vue'
 import GenerationKeyWordToolComponent from '@/components/tools/GenerationKeyWordToolComponent.vue'
+import GenerationTextToolComponent from '@/components/tools/GenerationTextToolComponent.vue'
+
 export default {
     name: 'DashBoard',
     components: {
@@ -11,7 +13,8 @@ export default {
         SideNav,
         ShowTools,
         TraductionToolComponent,
-        GenerationKeyWordToolComponent
+        GenerationKeyWordToolComponent,
+        GenerationTextToolComponent
     },
     data(){
         return {
