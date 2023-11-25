@@ -1,11 +1,11 @@
 <script setup>
-const email = ref(null)
-const password = ref(null)
-const ShowPassword = ref(false)
 
 import { useRouter } from 'vue-router';
 import { useUserStore } from '../../stores/user'
 import { ref } from 'vue';
+const email = ref(null)
+const password = ref(null)
+const ShowPassword = ref(false)
 const router = useRouter();
 const userStore = useUserStore()
 async function loginUser() {
