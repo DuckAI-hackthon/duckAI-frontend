@@ -4,7 +4,8 @@ import othersService from '@/services/others'
 
 export const useOtherStore = defineStore('other', {
     state: () => ({
-        ais: useStorage('ais' ,[])
+        ais: useStorage('ais' ,[]),
+        chatHistory: useStorage('chatHistory', []),
     }),
     actions: {
         async getAis() {
@@ -25,10 +26,10 @@ export const useOtherStore = defineStore('other', {
                 console.log(error)
             }
         },
-        async postGeneratorText(text, user_id, ai) {
+        async postGeneratorText(text, size, user_id, ai) {
             try {
                 console.log(text, user_id, ai)
-                const data = await othersService.postGeneratorText(text, user_id, ai, 3);
+                const data = await othersService.postGeneratorText(text, size, user_id, ai, 3);
                 console.log(data)
                 return data;
             } catch (error) {
@@ -46,6 +47,24 @@ export const useOtherStore = defineStore('other', {
                 console.log('oi');
                 console.log(error)
             }
-        }
+        },
+        async getChatHistory(user_id, ai_id) {
+            try {
+                const data = await othersService.getChatHistory(user_id, ai_id);
+                this.chatHistory = data;
+                return data;
+            } catch (error) {
+                console.log(error)
+            }
+        },
+        async postChatQEA(text, user_id, ai) {
+            try {
+                const data = await othersService.postChatQEA(text, user_id, ai, 1);
+                this.getChatHistory(user_id, ai);
+                return data;
+            } catch (error) {
+                console.log(error)
+            }
+        },
     }
 })

@@ -19,7 +19,8 @@ const to_lang = ref("en");
 async function postTranslate() {
     console.log(from_lang.value, to_lang.value)
     const data = await otherStore.postTranslate(text.value, from_lang.value, to_lang.value, userStore.userData.id, 1);
-    choice.value = data.response.response;
+    console.log(data.response)
+    choice.value = data.response;
 }
 </script>
 
@@ -37,11 +38,11 @@ async function postTranslate() {
                 </div>
             </div>
             <textarea class="gradient-border text-white  mt-10 w-[24vw] h-[30vh]" name="" id=""
-                placeholder="Digitar texto" v-model="texto"></textarea>
+                placeholder="Digitar texto" v-model="text"></textarea>
         </div>
         <div class="flex flex-col gap-16 justify-center items-center">
             <ArrowsSvgComponent />
-            <ButtonPrimary text="traduzir" @click="postTranslate" />
+            <ButtonPrimary text="Traduzir" link="/dashboard" @click="postTranslate" />
         </div>
 
         <div class="flex-col-center">
@@ -53,7 +54,7 @@ async function postTranslate() {
                 </select>
             </div>
             <textarea class="gradient-border text-white  mt-10 w-[24vw] h-[30vh]" name="" id=""
-                placeholder="Digitar texto" v-model="resposta"></textarea>
+                placeholder="Digitar texto" v-model="choice"></textarea>
         </div>
     </section>
 </template>

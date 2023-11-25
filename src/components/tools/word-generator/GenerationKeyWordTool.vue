@@ -44,7 +44,7 @@ async function GeneratorKey() {
         <img src="@/assets/images/pointer.png" alt="" class="w-[2vh] h-[2vh]" />
       </button>
     </div>
-  </section>
+ 
 </template>
 <style>
 .input-number {
