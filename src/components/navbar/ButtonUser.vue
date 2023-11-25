@@ -6,7 +6,7 @@
                     alt=""
                     class="w-6 h-6"
                 />
-                <p>{{ userData.username }}</p>
+                <p>{{ userData.email }}</p>
                 <svg class="w-3 h-3"
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -42,7 +42,7 @@ import { ref, computed } from 'vue';
 const userStore = useUserStore()
 
 const userData = computed(() => userStore.userData)
-
+console.log(userData.value)
 const openDropdown = ref(false)
 </script>
 <style scoped>

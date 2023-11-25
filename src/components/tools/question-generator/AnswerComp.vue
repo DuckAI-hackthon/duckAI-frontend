@@ -1,5 +1,5 @@
 <template>
-     <div class="flex flex-row gap-4">
+     <div class="flex items-center flex-row gap-4">
         <div class="gradient-border h-[6.5vh]">
             AI
         </div>

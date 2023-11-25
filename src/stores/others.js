@@ -17,9 +17,7 @@ export const useOtherStore = defineStore('other', {
         },
         async postTranslate(text, to_lang, from_lang, user_id, ai) {
             try {
-                console.log(text, to_lang, from_lang, user_id, ai)
                 const data = await othersService.postTranslate(text, to_lang, from_lang, user_id, ai, 2);
-                console.log(data)
                 return data;
             } catch (error) {
                 console.log(error)
@@ -27,9 +25,7 @@ export const useOtherStore = defineStore('other', {
         },
         async postGeneratorText(text, user_id, ai) {
             try {
-                console.log(text, user_id, ai)
                 const data = await othersService.postGeneratorText(text, user_id, ai, 3);
-                console.log(data)
                 return data;
             } catch (error) {
                 console.log(error)
