@@ -38,7 +38,6 @@ class UserService{
             const result = await axios.get(
                 "http://localhost:8000/api/get_historic_by_user/?id_user=" + id_user
             )
-            console.log(result.data)
             return result.data;
         } catch (error){
             console.error(error)

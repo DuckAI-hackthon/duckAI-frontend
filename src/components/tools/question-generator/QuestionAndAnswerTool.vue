@@ -13,7 +13,7 @@ export default {
 </script>
 
 <template>
-    <main class="pt-32 pb-32">
+    <main class="pt-44 pb-44">
         <ToolTitle text="Perguntas e Respostas "/>
         <GenAnswer />
     </main>

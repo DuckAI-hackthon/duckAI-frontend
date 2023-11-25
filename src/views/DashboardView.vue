@@ -9,16 +9,21 @@ import QuestionAndAnswerTool from '@/components/tools/question-generator/Questio
 import { dashboardStore } from '@/stores/dashboard.js'
 import { useUserStore } from '@/stores/user'
 import { onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 
 const myStore = dashboardStore();
 const userStore = useUserStore();
-        
+const router = useRouter(); 
+
 function changeContent(newContent) {
     myStore.changeContentTo(newContent);
 }
 
 onMounted(() => {
-    console.log(userStore.userData)
+    if(userStore.userData.email === null || userStore.userData.email === undefined || userStore.userData.email === '') {
+        console.log('Faça login para continuar')
+        router.push('/login');
+    }
 })
 
 </script>

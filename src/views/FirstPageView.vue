@@ -36,7 +36,7 @@ export default {
                     <ButtonGetStarted class="mt-6" text="Comece agora!" />
                 </div>
                 <div>
-                    <img :src="`./images/logo-pato.png`" alt="">
+                    <img :src="`./images/logo-pato.png`" class="2xl:mr-24"  alt="">
                 </div>
             </ContainerMain> 
             <footer>

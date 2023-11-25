@@ -20,10 +20,12 @@ async function GeneratorKey() {
 }
 </script>
 <template>
+  <section class="pt-32 pb-32">
   <article>
     <ToolTitle text="Geração de palavras-chave " />
     <div class="flex-center gap-10">
       <div class="gradient-border w-4/6 h-[36vh]">
+        Texto
         <p class="w-full p-2">
           {{ text }}
         </p>

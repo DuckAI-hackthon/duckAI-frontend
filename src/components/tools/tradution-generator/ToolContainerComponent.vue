@@ -17,7 +17,6 @@ const from_lang = ref("pt");
 const to_lang = ref("en");
 
 async function postTranslate() {
-    console.log(from_lang.value, to_lang.value)
     const data = await otherStore.postTranslate(text.value, from_lang.value, to_lang.value, userStore.userData.id, 1);
     console.log(data.response)
     choice.value = data.response;
