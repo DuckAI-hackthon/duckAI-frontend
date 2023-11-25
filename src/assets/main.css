@@ -4,6 +4,10 @@
 
 }
 
+.input-chat {
+    @apply w-[50vw] h-[6vh] px-3 outline-none border-none focus:border-[#6843EC];
+    background: none;
+}
 
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
