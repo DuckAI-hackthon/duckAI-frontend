@@ -27,7 +27,7 @@ import AnswerComp from "./AnswerComp.vue";
 import { ref } from "vue";
 
 const message = ref("");
-const question = ref("Exemplo");
+const question = ref(". . .");
 const answer = ref("Olá, estou aqui para te ajudar!");
 
 async function newQuestion() {
