@@ -5,16 +5,18 @@ import { ref } from 'vue'
 
 import { useOtherStore } from "@/stores/others";
 import { useUserStore } from "@/stores/user";
+import { dashboardStore } from "@/stores/dashboard";
 
 const otherStore = useOtherStore();
 const userStore = useUserStore();
+const dashStore = dashboardStore();
 
 const text = ref("");
 const choice = ref("");
 
 async function GeneratorKey() {
   console.log(text.value)
-  const data = await otherStore.postKeyGenerator(text.value, 11, userStore.userData.id, 1);
+  const data = await otherStore.postKeyGenerator(text.value, 11, userStore.userData.id, dashStore.selectAI);
 
   choice.value = data.response.response;
 }

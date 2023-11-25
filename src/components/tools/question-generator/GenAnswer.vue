@@ -18,9 +18,11 @@
 <script setup>
 import { useOtherStore } from "@/stores/others";
 import { useUserStore } from "@/stores/user";
+import { dashboardStore } from "@/stores/dashboard";
 
 const otherStore = useOtherStore();
 const userStore = useUserStore();
+const dashStore = dashboardStore();
 
 import QuestionComp from "./QuestionComp.vue";
 import AnswerComp from "./AnswerComp.vue";
@@ -30,7 +32,7 @@ const question = ref("");
 // const answer = ref("Olá, estou aqui para te ajudar!");
 
 async function newQuestion() {
-  const data = await otherStore.postChatQEA(question.value, userStore.userData.id, 1);
+  const data = await otherStore.postChatQEA(question.value, userStore.userData.id, dashStore.selectAI);
   console.log(data)
 }
 

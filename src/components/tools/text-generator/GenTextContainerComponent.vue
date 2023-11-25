@@ -23,9 +23,12 @@ import { ref } from 'vue'
 
 import { useOtherStore } from "@/stores/others";
 import { useUserStore } from "@/stores/user";
+import { dashboardStore } from "@/stores/dashboard";
 
 const otherStore = useOtherStore();
 const userStore = useUserStore();
+const dashStore = dashboardStore();
+
 const keyLoader = ref(false)
 const text = ref("");
 const choice = ref("Olá, estou aqui para te ajudar!");
@@ -35,7 +38,7 @@ const currentSize = ref(0)
 async function postGeneratorText() {
     keyLoader.value = !keyLoader.value
 
-    const data = await otherStore.postGeneratorText(text.value, currentSize.value + 1, userStore.userData.id, 1);
+    const data = await otherStore.postGeneratorText(text.value, currentSize.value + 1, userStore.userData.id, dashStore.selectAI);
     choice.value = data.response;
 
     new Promise((resolve) => {

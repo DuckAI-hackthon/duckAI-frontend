@@ -6,10 +6,13 @@ import { ref } from 'vue'
 
 import { useOtherStore } from "@/stores/others";
 import { useUserStore } from "@/stores/user";
+import { dashboardStore } from '@/stores/dashboard';
 import ButtonPrimary from '@/components/ButtonPrimary.vue';
 
 const otherStore = useOtherStore();
 const userStore = useUserStore();
+const dashStore = dashboardStore();
+
 
 const text = ref("a");
 const choice = ref("");
@@ -17,7 +20,7 @@ const from_lang = ref("pt");
 const to_lang = ref("en");
 
 async function postTranslate() {
-    const data = await otherStore.postTranslate(text.value, from_lang.value, to_lang.value, userStore.userData.id, 1);
+    const data = await otherStore.postTranslate(text.value, from_lang.value, to_lang.value, userStore.userData.id, dashStore.selectAI);
     console.log(data.response)
     choice.value = data.response;
 }

@@ -1,11 +1,13 @@
 import { defineStore } from 'pinia'
 import { useStorage } from '@vueuse/core'
 import othersService from '@/services/others'
+import { dashboardStore } from './dashboard'
 
 export const useOtherStore = defineStore('other', {
     state: () => ({
         ais: useStorage('ais' ,[]),
         chatHistory: useStorage('chatHistory', []),
+        dashStore: dashboardStore(),
     }),
     actions: {
         async getAis() {
@@ -18,6 +20,7 @@ export const useOtherStore = defineStore('other', {
         },
         async postTranslate(text, to_lang, from_lang, user_id, ai) {
             try {
+                console.log(dashboardStore().selectAI)
                 const data = await othersService.postTranslate(text, to_lang, from_lang, user_id, ai, 2);
                 return data;
             } catch (error) {
@@ -46,9 +49,9 @@ export const useOtherStore = defineStore('other', {
                 console.log(error)
             }
         },
-        async getChatHistory(user_id, ai_id) {
+        async getChatHistory(user_id, ai) {
             try {
-                const data = await othersService.getChatHistory(user_id, ai_id);
+                const data = await othersService.getChatHistory(user_id, ai);
                 this.chatHistory = data;
                 return data;
             } catch (error) {
@@ -57,7 +60,7 @@ export const useOtherStore = defineStore('other', {
         },
         async postChatQEA(text, user_id, ai) {
             try {
-                const data = await othersService.postChatQEA(text, user_id, ai, 1);
+                const data = await othersService.postChatQEA(text, user_id, ai);
                 this.getChatHistory(user_id, ai);
                 return data;
             } catch (error) {

@@ -48,19 +48,19 @@ async function logout() {
         </button>
         <section>
             <ul class="flex flex-col w-72">
-                <li @click="changeAi('chatgpt')" :class="{'select': select == 'chatgpt'}" class="hover:border-l-2 pl-4 py-4 cursor-pointer border-primary">
+                <li @click="changeAi(1)" :class="{'select': select == 1}" class="hover:border-l-2 pl-4 py-4 cursor-pointer border-primary">
                     <span class="pr-2 flex gap-4">
                         <img :src="`./images/icons/chatgpt.webp`" class="w-8" alt="">
                         Chatgpt
                     </span>
                 </li>
-                <li @click="changeAi('hercai')" :class="{'select': select == 'hercai'}" class="hover:border-l-2 pl-4 py-4 cursor-pointer border-primary">
+                <li @click="changeAi(2)" :class="{'select': select == 2}" class="hover:border-l-2 pl-4 py-4 cursor-pointer border-primary">
                     <span class="pr-2 flex gap-4">
                         <img :src="`./images/icons/hercai.png`" class="w-8" alt="">
                         Hercai
                     </span>
                 </li>
-                <li @click="changeAi('lhama')" :class="{'select': select == 'lhama'}" class="hover:border-l-2 pl-4 py-4 cursor-pointer border-primary">
+                <li @click="changeAi(3)" :class="{'select': select == 3}" class="hover:border-l-2 pl-4 py-4 cursor-pointer border-primary">
                     <span class="pr-2 flex gap-4">
                         <img :src="`./images/icons/meta.png`" class="w-8" alt="">
                         Lhama
