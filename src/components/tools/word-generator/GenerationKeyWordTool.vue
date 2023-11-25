@@ -46,7 +46,11 @@ async function GeneratorKey() {
         <img src="@/assets/images/pointer.png" alt="" class="w-[2vh] h-[2vh]" />
       </button>
     </div>
+<<<<<<< HEAD
   </section>
+=======
+ </section>
+>>>>>>> 7d1b1a87e23e60e5d3ae9a1a89cce1948cd5e2de
 </template>
 <style>
 .input-number {
