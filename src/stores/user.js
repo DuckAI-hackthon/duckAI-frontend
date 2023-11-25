@@ -2,11 +2,16 @@ import { defineStore } from 'pinia';
 import userService from '@/services/userApi';
 import { useRouter } from 'vue-router';
 const router = useRouter();
+import { useStorage } from '@vueuse/core';
 
 export const useUserStore = defineStore('user', {
     state: () => ({
         loggedIn: null,
-        userData: []
+        userData: useStorage('userData', []),
+        history: [],
+        chats: [],
+        chatHistory: [],
+        favorites: [],
     }),
     actions: {
         async login(email, password) {
@@ -33,6 +38,14 @@ export const useUserStore = defineStore('user', {
             try {
                 this.loggedIn = null;
                 this.userData = [];
+            } catch (error) {
+                console.log(error)
+            }
+        },
+        async getHistory() {
+            try {
+                const data = await userService.getHistory(1);
+                this.history = data;
             } catch (error) {
                 console.log(error)
             }

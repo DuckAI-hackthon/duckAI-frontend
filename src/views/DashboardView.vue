@@ -7,12 +7,19 @@ import GenerationKeyWordTool from '@/components/tools/word-generator/GenerationK
 import GenerationTextTool from '@/components/tools/text-generator/GenerationTextTool.vue'
 import QuestionAndAnswerTool from '@/components/tools/question-generator/QuestionAndAnswerTool.vue'
 import { dashboardStore } from '@/stores/dashboard.js'
+import { useUserStore } from '@/stores/user'
+import { onMounted } from 'vue'
 
 const myStore = dashboardStore();
+const userStore = useUserStore();
         
 function changeContent(newContent) {
     myStore.changeContentTo(newContent);
 }
+
+onMounted(() => {
+    console.log(userStore.userData)
+})
 
 </script>
 

@@ -1,26 +1,15 @@
-<script>
-export default {
-    data(){
-        return {
-            ias: [
-                {
-                    img: 'img',
-                    nome: 'ia1'
-                },
-                {
-                    img: 'img',
-                    nome: 'ia2'
-                },
-                {
-                    img: 'img',
-                    nome: 'ia3'
-                },
-                
-            ],
-            openMenu: false,
-        }
-    }
-}
+<script setup>
+import { useOtherStore } from '@/stores/others';
+import { computed, onMounted } from 'vue';
+
+const otherStore = useOtherStore();
+
+const ais = computed(() => otherStore.ais);
+
+
+onMounted(()=> {
+    console.log(ais.value)
+})
 </script>
 
 <template>
@@ -44,8 +33,8 @@ export default {
         </button>
         <section>
             <ul class="flex flex-col w-72">
-                <li class="hover:border-l-2 pl-4 py-4 cursor-pointer border-primary" v-for="ia in ias" :key="ia.nome">
-                    <span class="pr-2"> {{ ia.img  }} </span> <span> {{ ia.nome  }} </span>
+                <li class="hover:border-l-2 pl-4 py-4 cursor-pointer border-primary" v-for="ai in ais" :key="ai.id">
+                    <span class="pr-2"><img :src="ai.image.file" class="w-4" alt=""> </span> <span> {{ ai.name  }} </span>
                 </li>
             </ul>
         </section>

@@ -1,25 +1,29 @@
 <script setup>
-// import { useUserStore } from '../../stores/user'
-// import { computed, ref } from 'vue';
+import { useUserStore } from '../../stores/user'
+import { ref, computed } from 'vue';
 
-// const router = useRouter();
+const userStore = useUserStore()
 
-// const userStore = useUserStore()
+const email = ref(null)
+const password = ref(null)
+const ShowPassword = ref(false)
 
-// const userData = computed(()=> userStore.userData)
+async function loginUser() {
+    await userStore.login(email.value, password.value);
+}
+const userData = computed(()=> userStore.userData)
 
-// const email = ref(null)
-// const password = ref(null)
-// const ShowPassword = ref(false)
-
-// async function loginUser() {
-//     await userStore.login(email.value, password.value);
-//     if(userData.value.message == "Login realizado com sucesso!"){
-//         router.push({
-//             name: 'dashboard',
-//         })
-//     }
-// }
+ const email = ref(null)
+ const password = ref(null)
+const ShowPassword = ref(false)
+ async function loginUser() {
+    await userStore.login(email.value, password.value);
+    if(userData.value.message == "Login realizado com sucesso!"){
+        router.push({
+            name: 'dashboard',
+        })
+    }
+}
 </script>
 
 <template>
