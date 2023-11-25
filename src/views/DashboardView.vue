@@ -6,6 +6,7 @@ import TraductionTool from '@/components/tools/tradution-generator/TraductionToo
 import GenerationKeyWordTool from '@/components/tools/word-generator/GenerationKeyWordTool.vue'
 import GenerationTextTool from '@/components/tools/text-generator/GenerationTextTool.vue'
 import QuestionAndAnswerTool from '@/components/tools/question-generator/QuestionAndAnswerTool.vue'
+// import EditProfileComponent from '@/components/EditProfileComponent.vue'
 import { dashboardStore } from '@/stores/dashboard.js'
 import { useUserStore } from '@/stores/user'
 import { onMounted } from 'vue'
@@ -44,6 +45,7 @@ onMounted(() => {
                 <GenerationKeyWordTool class="mb-44" v-else-if="myStore.mainContent === 'GenerationKeyWordToolComponent'" />
                 <QuestionAndAnswerTool class="mb-44" v-else-if="myStore.mainContent === 'QuestionAndAnswerToolComponent'" />
             </KeepAlive>
+            <!-- <EditProfileComponent/> -->
         </main>
         <footer>
         </footer>
