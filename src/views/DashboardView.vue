@@ -3,6 +3,7 @@ import TopNav from '@/components/navbar-dashboard/TopNav.vue'
 import SideNav from '@/components/navbar-dashboard/SideNav.vue'
 import ShowTools from '@/components/ShowTools.vue'
 import TraductionToolComponent from '@/components/tools/TraductionToolComponent.vue'
+import GenerationTextToolComponent from '@/components/tools/GenerationTextToolComponent.vue'
 
 export default {
     name: 'DashBoard',
@@ -10,11 +11,12 @@ export default {
         TopNav,
         SideNav,
         ShowTools,
-        TraductionToolComponent
+        GenerationTextToolComponent,
+        TraductionToolComponent,
     },
     data(){
         return {
-            mainContent: 'InfoTools',
+            mainContent: 'GenerationTextToolComponent',
         }
     },
     methods: {
@@ -27,7 +29,7 @@ export default {
 </script>
 
 <template>
-    <div class="w-full flex justify-center items-center bg-black text-white">
+    <div class="w-full h-full flex justify-center items-center bg-black text-white">
         <header>
             <TopNav 
                 @changeToolNav="changeTo($event)"
