@@ -1,28 +1,41 @@
 import { defineStore } from 'pinia';
-import userOperations from '@/services/userApi';
+import userService from '@/services/userApi';
+import { useRouter } from 'vue-router';
+const router = useRouter();
 
 export const useUserStore = defineStore('user', {
     state: () => ({
-        userData: [],
-        loggedIn: false,
+        loggedIn: null,
+        userData: []
     }),
     actions: {
-        async login(username, password) {
-            const data = await userOperations.loginUser(username, password);
-            console.log(data)
-            this.userData = data;
-            this.loggedIn = true;
+        async login(email, password) {
+            console.log(email, password)
+            try {
+                const data = await userService.loginUser(email, password);
+                this.loggedIn = true;
+                this.userData = data;
+                router.push({ name: 'dashboard' })
+            } catch (error) {
+                console.log(error)
+            }
         },
-        // async logout() {
-        //     const data = await userOperations.logout();
-        //     this.userData = data;
-        //     this.loggedIn = false;
-        // },
         async register(email, password, name) {
-            const data = await userOperations.registerUser(email, password, name);
-            this.userData = data;
-            this.loggedIn = true;
+            try {
+                const data = await userService.registerUser(email, password, name);
+                this.loggedIn = true;
+                this.userData = data;
+            } catch (error) {
+                console.log(error)
+            }
+        },
+        logout() {
+            try {
+                this.loggedIn = null;
+                this.userData = [];
+            } catch (error) {
+                console.log(error)
+            }
         }
-    }
-}
-)
+    },
+})

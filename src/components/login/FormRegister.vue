@@ -1,7 +1,8 @@
 <script setup>
 import { ref } from 'vue';
-import { userOperationsStore } from '@/stores/user';
-const newUserOperationsStore = userOperationsStore();
+import { useUserStore } from '../../stores/user'
+
+const userStore = useUserStore();
 
 const name = ref('');
 const email = ref('');
@@ -11,10 +12,8 @@ const ShowPassword = ref(false)
 
 async function registerUser(){
     if(password.value === confirmPassword.value){
-        await newUserOperationsStore.register(email.value, password.value, name.value)
-        if (userOperationsStore.registerUser === 201){
-            console.log("Usuario cadastrado")
-        }
+        console.log('a')
+        await userStore.register(email.value, password.value, name.value)
     }else{
         alert("As senhas nao coincidem(placeholder).")
     }

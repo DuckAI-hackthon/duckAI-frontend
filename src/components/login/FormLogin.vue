@@ -1,18 +1,24 @@
 <script setup>
-import { useUserStore } from '@/stores/user'
+import { useUserStore } from '../../stores/user'
 import { computed, ref } from 'vue';
 
-const operationsStore = useUserStore()
+const router = useRouter();
 
-const userData = computed(()=> operationsStore.userData)
+const userStore = useUserStore()
+
+const userData = computed(()=> userStore.userData)
 
 const email = ref(null)
 const password = ref(null)
 const ShowPassword = ref(false)
 
 async function loginUser() {
-    await operationsStore.login(email.value, password.value);
-    console.log(userData.value)
+    await userStore.login(email.value, password.value);
+    if(userData.value.message == "Login realizado com sucesso!"){
+        router.push({
+            name: 'dashboard',
+        })
+    }
 }
 </script>
 
