@@ -31,7 +31,7 @@ onMounted(() => {
             />
             <SideNav />
         </header>
-        <main class="pt-32 w-8/12 m-auto h-screen">
+        <main class="w-8/12 m-auto">
             <KeepAlive>
                 <showTools @changeContentTo="changeContent($event)" v-if="myStore.mainContent === 'InfoTools'" />
                 <TraductionTool v-else-if="myStore.mainContent === 'TraductionToolComponent'" />

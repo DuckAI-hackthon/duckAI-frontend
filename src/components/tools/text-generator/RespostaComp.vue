@@ -1,6 +1,6 @@
 <template>
-    <div class="flex flex-row gap-4 items-center">
-        <div class="gradient-border h-[6.5vh]">
+    <div class="flex gap-4 items-start justify-center">
+        <div class="gradient-border h-[6.5vh] flex-center">
             IA
         </div>
         <p class="w-[35vw]">
