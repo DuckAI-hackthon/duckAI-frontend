@@ -18,7 +18,7 @@ async function GeneratorKey() {
   console.log(text.value)
   const data = await otherStore.postKeyGenerator(text.value, 11, userStore.userData.id, dashStore.selectAI);
 
-  choice.value = data.response.response;
+  choice.value = data.response;
 }
 </script>
 <template>
