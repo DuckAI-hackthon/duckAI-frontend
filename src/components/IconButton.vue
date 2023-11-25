@@ -1,6 +1,6 @@
 <template lang="">
     <div>
-        <button class="mx-3 hover:opacity-70 transition-all">
+        <button class="mx-3">
             <slot></slot>
         </button>
     </div>

@@ -18,25 +18,25 @@ export default {
     },  
     data() {
         return {
-            title: 'Lorem Ipsum',
-            subTitle: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s'
+            title: 'IA em Ação.',
+            subTitle: 'Tradução imediata, resumo instantâneo, geração veloz e respostas rápidas: Desbloqueando o potencial do texto com IA.'
         }
     }
 }
 </script>
 
 <template>
-    <div class="w-screen h-screen bg-black text-white box-border">
+    <div class="w-screen h-screen text-white box-border">
         <div class="container-content h-full pt-4 flex-col flex justify-between box-border ">
             <NavGetSarted />
             <ContainerMain class="flex justify-between items-center overflow-visible">
                 <div  class="gap-4 w-full flex flex-col">
                     <TitleSpecial :text="title" />
                     <SubTitle :text="subTitle" />
-                    <ButtonGetStarted text="Get Started" />
+                    <ButtonGetStarted text="Comece agora!" />
                 </div>
                 <div>
-                    <img :src="`./images/pato4.png`" alt="">
+                    <img :src="`./images/logo-pato.png`" alt="">
                 </div>
             </ContainerMain> 
             <footer>

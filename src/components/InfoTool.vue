@@ -5,7 +5,7 @@
             <h2 class="text-2xl">{{ title }}</h2>
         </div>
         <p>{{ description }}</p>
-        <h3 class="block pt-2 cursor-pointer">
+        <h3 @click="changeTo(slug)" class="block pt-2 cursor-pointer">
             Acessar Feramenta
         </h3>
     </article>
@@ -24,7 +24,17 @@ export default {
         img: {
             type: String,
             required: true
+        },
+        slug: {
+            type: String,
+            default: 'test'
         }
+    },
+    methods: {
+        changeTo(slug) {
+            console.log(slug);
+            this.$emit('changeTool', slug);
+       }
     },
 }
 </script>
@@ -36,7 +46,12 @@ article {
 article h3 {
     transition: all .3s ease-in-out;
 }
- article:hover h3 {
+
+article h2 {
+    color: #fff;
+}
+
+article:hover h3 {
     color: #6843EC;
 }
 </style>
