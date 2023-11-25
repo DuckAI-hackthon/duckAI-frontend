@@ -1,6 +1,6 @@
 <template lang="">
     <div class="text-center pb-4 text-gray-400">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+            <a href="https://fabricadesoftware.ifc.edu.br/pt-br/">Fábrica de Software</a> • © 2023 • duckai.tech
     </div>
 </template>
 <script>

@@ -12,7 +12,7 @@ export default {
 </script>
 
 <template>
-    <section class=" flex-center background">
+    <section class="flex-center background">
         <CirclesComponent/>
         <div class="glass-background overflow-hidden"></div>
         <ContainerFormComponent />

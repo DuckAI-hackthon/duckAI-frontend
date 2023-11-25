@@ -6,7 +6,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: () => import('../views/GetStartedView.vue')
+      component: () => import('../views/FirstPageView.vue')
     },
     {
       path: '/login',
@@ -14,6 +14,7 @@ const router = createRouter({
       component: () => import('../views/LoginView.vue')
     },
     {
+<<<<<<< HEAD
       path: '/qea',
       name: "qea",
       component: () => import('../views/QEAView.vue')
@@ -34,6 +35,8 @@ const router = createRouter({
       component: () => import('../views/KeysView.vue')
     },
     {
+=======
+>>>>>>> mateus
       path: '/register',
       name: 'register',
       component: () => import('../views/RegisterView.vue')

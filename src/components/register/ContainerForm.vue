@@ -61,6 +61,7 @@ async function registerUser(){
                 <p class="text-sm">Já possuí conta? Faça Login </p>
                 </Router-link>
 
+
         </label>    
     </form>
 </template>
