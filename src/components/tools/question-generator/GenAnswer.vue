@@ -1,9 +1,9 @@
 <template>
   <div class="flex-col-center gap-10 xl:mt-20">
-    <div v-for="chat in chatHistory" :key="chat.id">
-      <AnswerComp :answer="chat.choice"/>
+    <div v-for="chat in chatHistory" :key="chat.id" class="chat">
       <QuestionComp :message="chat.question" />
       <hr class="text-zinc-600 h-0 w-8/s12" />
+      <AnswerComp :answer="chat.choice"/>
     </div>
 
     <div class="flex-center gap-[7vw] gradient-border w-[60vw] fixed bottom-8">
@@ -44,6 +44,10 @@ onMounted(()=> {
 
 </script>
 
-<style>
-
+<style scoped>
+.chat {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 </style>
