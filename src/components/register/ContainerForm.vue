@@ -34,7 +34,7 @@ export default {
                 <p class="text-sm">Confirmação de senha</p>
                 <p class="text-xs">Mostrar</p>
             </div>
-            <input class="input-login my-1" type="password">
+            <input class="input-login my-1 " type="password">
             <p class="text-xs">Use 8 caracteres ou mais.</p>
         </label>
 

@@ -12,7 +12,7 @@ export default {
 </script>
 
 <template>
-    <section class="flex flex-row justify-between mt-[10vh] pb-[24.9vh]">
+    <section class="flex flex-row justify-between mt-[10vh] pb-[19vh]">
         <div class="flex-col-center">
             <div class="flex gap-3 flex-row">
                 <select class="font-light gradient-border text-white w-[20vw]" name="" id="">
