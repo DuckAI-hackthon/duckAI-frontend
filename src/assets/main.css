@@ -1,7 +1,9 @@
 * {
     margin: 0;
     padding: 0;
+
 }
+
 
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
@@ -22,11 +24,11 @@
 }
 .glass-background {
     @apply w-screen h-screen absolute;
-    backdrop-filter: blur(90px);
+    backdrop-filter: blur(200px);
 }
 
 .input-login {
-    @apply rounded-lg border border-black text-sm text-gray;
+    @apply rounded-lg border border-black text-sm text-gray outline-none focus:border-[#6843EC];
     width: 22vw;
     padding: 1vh 1vw;
 }
@@ -35,6 +37,16 @@
 
 body {
     font-family: 'Poppins', sans-serif;
+    background: url('./images/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.gradient-border{
+    @apply py-3 px-4 rounded-[10px] ;
+    border: 1px solid #6843EC;
+    background: #19161C;
+    box-shadow: 0px 58px 80px 0px rgba(0, 0, 0, 0.16);
+    resize: none;
 }
 
 .flex-center {
@@ -71,3 +83,10 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+.text-gradient{
+    background: linear-gradient(90deg,rgba(255, 59, 255, 1), rgba(236, 191, 191, 1), rgba(92, 36, 255, 1), rgba(217, 79, 213, 1));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
