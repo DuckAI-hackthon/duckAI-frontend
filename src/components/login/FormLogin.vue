@@ -36,7 +36,6 @@ async function loginUser() {
             <div class="btn-primary hover:bg-indigo-700" @click="loginUser">
                 Login
             </div>      
-            
             <p class="text-sm text-left text-zinc-500">
                 Não possuí uma conta?
                 <Router-link class="text-black" to="/register">Cadastre-se!</Router-link>

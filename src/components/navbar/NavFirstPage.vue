@@ -6,7 +6,7 @@
         <nav>
             <ul class="flex gap-4 m-4 items-center">
                 <NavLi>
-                    <ButtonPrimary text="Sobre Nós" />
+                    <ButtonPrimary link="/sobre-nos" text="Sobre Nós" />
                 </NavLi>
                 <NavLi>
                     <ButtonLoginSpecial />
