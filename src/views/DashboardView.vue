@@ -3,14 +3,15 @@ import TopNav from '@/components/navbar-dashboard/TopNav.vue'
 import SideNav from '@/components/navbar-dashboard/SideNav.vue'
 import ShowTools from '@/components/ShowTools.vue'
 import TraductionToolComponent from '@/components/tools/TraductionToolComponent.vue'
-
+import GenerationKeyWordToolComponent from '@/components/tools/GenerationKeyWordToolComponent.vue'
 export default {
     name: 'DashBoard',
     components: {
         TopNav,
         SideNav,
         ShowTools,
-        TraductionToolComponent
+        TraductionToolComponent,
+        GenerationKeyWordToolComponent
     },
     data(){
         return {
