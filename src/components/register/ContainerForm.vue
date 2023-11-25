@@ -7,6 +7,7 @@ const name = ref('');
 const email = ref('');
 const password = ref('');
 const confirmPassword = ref('');
+const ShowPassword = ref(false)
 
 async function registerUser(){
     if(password.value === confirmPassword.value){
@@ -36,18 +37,18 @@ async function registerUser(){
         <label>
             <div class="flex flex-row just items-center justify-between	">
                 <p class="text-sm">Senha</p>
-                <p class="text-xs">Mostrar</p>
+                <p class="text-xs cursor-pointer"  @click="ShowPassword = !ShowPassword">Mostrar</p>
             </div>
-            <input class="input-login my-1" type="password" v-model="password">
+            <input class="input-login my-1" :type="ShowPassword ? 'text' : 'password'" v-model="password">
             <p class="text-xs">Use 8 caracteres ou mais.</p>
         </label>
 
         <label>
             <div class="flex flex-row items-center justify-between	">
                 <p class="text-sm">Confirmação de senha</p>
-                <p class="text-xs">Mostrar</p>
+                <p class="text-xs cursor-pointer" @click="ShowPassword = !ShowPassword">Mostrar</p>
             </div>
-            <input class="input-login my-1" type="password" v-model="confirmPassword">
+            <input class="input-login my-1" :type="ShowPassword ? 'text' : 'password'" v-model="confirmPassword">
             <p class="text-xs">Use 8 caracteres ou mais.</p>
         </label>
 
@@ -55,8 +56,11 @@ async function registerUser(){
         <label class="flex-login gap-4">
                 <div class="btn-primary hover:bg-indigo-700" @click="registerUser()">
                     Cadastrar
-                </div>      
+                </div>    
+                <Router-link to="/login">  
                 <p class="text-sm">Já possuí conta? Faça Login </p>
+                </Router-link>
+
         </label>    
     </form>
 </template>

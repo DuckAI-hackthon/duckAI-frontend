@@ -20,14 +20,13 @@ export default class userOperations{
     async loginUser(email, password){
         try{
             const result = await axios.post(
-                "http://localhost:8000/token/",
+                "http://localhost:8000/api/login/",
                 {
                     email: email,
                     password: password
                 }
             )
-            console.log(result) 
-            return result;
+            return result.data;
         }   catch (error){
             console.error(error)
             return error;
