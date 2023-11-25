@@ -1,30 +1,41 @@
-import { reactive, computed } from 'vue';
 import { defineStore } from 'pinia';
-import userOperations from '@/services/userApi';
-const userApi = new userOperations()
+import userService from '@/services/userApi';
+import { useRouter } from 'vue-router';
+const router = useRouter();
 
-export const userOperationsStore = defineStore('user', () => {
-    const state = reactive({
-        registerStatus: null,
+export const useUserStore = defineStore('user', {
+    state: () => ({
+        loggedIn: null,
         userData: []
-    });
-    
-    const registerStatus = computed(() => state.registerStatus);
-    const userData = computed(() => state.userData)
-
-    const registerUser = async (email, password, name) => {
-        const data = await userApi.registerUser(email, password, name);
-        state.registerStatus = data;
-    };
-
-    const loginUser = async (email, password) => {
-        try {
-            const response = await userApi.loginUser(email, password);
-            state.userData = response;
-        } catch (error) {
-            console.log(error)
+    }),
+    actions: {
+        async login(email, password) {
+            console.log(email, password)
+            try {
+                const data = await userService.loginUser(email, password);
+                this.loggedIn = true;
+                this.userData = data;
+                router.push({ name: 'dashboard' })
+            } catch (error) {
+                console.log(error)
+            }
+        },
+        async register(email, password, name) {
+            try {
+                const data = await userService.registerUser(email, password, name);
+                this.loggedIn = true;
+                this.userData = data;
+            } catch (error) {
+                console.log(error)
+            }
+        },
+        logout() {
+            try {
+                this.loggedIn = null;
+                this.userData = [];
+            } catch (error) {
+                console.log(error)
+            }
         }
-    }
-
-    return { userData, registerStatus, registerUser, loginUser };
+    },
 })
